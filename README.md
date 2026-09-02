@@ -14,5 +14,4 @@
 5. 📋 內部全域資產盤點 SOP (4 Technical Leads SOP & GxP Audit Trail)
 6. ⚡ DFIR 團隊進駐程序與 WBS (14-Day Delivery & Legal Privilege)
 7. 📅 日常主動預防監控體系 (Daily / Weekly / Monthly / Quarterly / Annual Cadence)
-8. ✉️ 總經理特助先行進用 ＋ 董事會真除 CISO 決策備忘錄 (Special Assistant Path)
-9. 📁 正式報告下載中心 (7 份完整 Word .docx 文件)
+8. 📁 正式報告下載中心 (7 份完整 Word .docx 文件)

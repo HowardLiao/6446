@@ -507,10 +507,6 @@
       <span>📅 日/週/月/季預防體系</span>
       <span class="nav-tag">IMMUNE</span>
     </li>
-    <li class="nav-item" onclick="showMiroTab('assistant')">
-      <span>✉️ 總經理特助/Yuonne 決策函</span>
-      <span class="nav-tag">DUAL</span>
-    </li>
     <li class="nav-item" onclick="showMiroTab('downloads')">
       <span>📁 正式報告下載中心</span>
       <span class="nav-tag">7 份</span>
@@ -965,49 +961,7 @@
       </table>
     </div>
 
-    <!-- Tab 8: Assistant / Yuonne -->
-    <div id="miro-assistant" class="tab-content">
-      <h1 class="tab-headline">
-        <span>〰</span>
-        <span>總經理特助先行進用 ＋ 董事會真除 CISO 決策備忘錄</span>
-      </h1>
-      <p class="tab-lead">
-        以「總經理特助」破局解決人資兩難，兼顧即刻進駐救火、合法經理人授權與董事會公開遴選程序。
-      </p>
-
-      <div class="miro-callout">
-        <div class="miro-callout-header">
-          <span>⚡</span>
-          <span>特助進用模式的三大治理優勢 (Why Special Assistant to CEO?)</span>
-        </div>
-        <ol>
-          <li><strong>總經理專屬權限直接起聘（48 小時內發 Offer）：</strong>總經理對特助擁有 100% 直聘權限，無須等每季董事會開會，本週即可起聘進駐。</li>
-          <li><strong>具備實質跨部門調度權限（CEO 尚方寶劍）：</strong>特助代表 CEO 意志，名正言順調度 IT、SecOps、要求泛泰醫療專線配合，並督導外部 DFIR 鑑識團隊。</li>
-          <li><strong>內控與利益衝突完全解套：</strong>我以公司內部高階幹部身分作為 DFIR 甲方驗收者，無「球員兼裁判」疑慮；人資處同步呈報審計委員會進行客觀比較，於後續董事會正式真除 CISO。</li>
-        </ol>
-      </div>
-
-      <div class="miro-grid-2">
-        <div class="miro-card">
-          <div class="miro-card-kicker">YUONNE'S PROPOSAL</div>
-          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:8px;">Yuonne 給人資長/總經理簽呈</h3>
-          <p style="font-size:13px; color:var(--text-charcoal);">
-            1. 緊急應變需求：即刻引入高階戰力。<br>
-            2. 總經理特助起聘：統籌防禦並督導 DFIR。<br>
-            3. 董事會遴選銜接：列入 CISO 候選人後續真除。
-          </p>
-        </div>
-        <div class="miro-card">
-          <div class="miro-card-kicker">EXECUTIVE TALKING POINTS</div>
-          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:8px;">我給 Yuonne 的溝通話術</h3>
-          <p style="font-size:13px; color:var(--text-charcoal);">
-            「Yuonne，用總經理特助起聘我，公司明天就有最強即戰力，總經理最省事，董事會程序完全合規，我也能在健全體制下全力作戰！」
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tab 9: Downloads -->
+    <!-- Tab 8: Downloads -->
     <div id="miro-downloads" class="tab-content">
       <h1 class="tab-headline">
         <span>📁</span>
@@ -1102,8 +1056,7 @@
     'audit': '內部全域資產盤點 SOP (Asset Audit)',
     'dfir': 'DFIR 團隊進駐程序與 WBS (Forensic Engagement)',
     'routine': '日常主動預防報告體系 (Preventive Cadence)',
-    'assistant': '總經理特助/Yuonne 決策函 (Special Assistant Path)',
-    'downloads': '正式報告下載中心 (Download Center)'
+        'downloads': '正式報告下載中心 (Download Center)'
   };
 
   function showMiroTab(tabId) {
