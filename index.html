@@ -491,6 +491,13 @@
       <span>🛡️ 180天戰略計劃書</span>
       <span class="nav-tag">CSF 2.0</span>
     </li>
+    <li class="nav-item" onclick="showMiroTab('governance')">
+      <span>🏛️ CIO/CTO/CISO 組織權責</span>
+      <span class="nav-tag">CHARTER</span>
+    </li>
+      <span>🛡️ 180天戰略計劃書</span>
+      <span class="nav-tag">CSF 2.0</span>
+    </li>
     <li class="nav-item" onclick="showMiroTab('ueba')">
       <span>🤖 UEBA 行為監測平台</span>
       <span class="nav-tag">AI ITDR</span>
@@ -509,7 +516,7 @@
     </li>
     <li class="nav-item" onclick="showMiroTab('downloads')">
       <span>📁 正式報告下載中心</span>
-      <span class="nav-tag">7 份</span>
+      <span class="nav-tag">8 份</span>
     </li>
   </ul>
 
@@ -697,6 +704,89 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    
+    <!-- Tab 3.5: Governance Charter (CIO / CTO / CISO) -->
+    <div id="miro-governance" class="tab-content">
+      <h1 class="tab-headline">
+        <span>🏛️</span>
+        <span>藥華醫藥 CIO / CTO / CISO 高階技術鐵三角組織權責章程</span>
+      </h1>
+      <p class="tab-lead">
+        遵循 Gartner 跨國企業治理標準，建立「第一道防線營運賦能 ＋ 研發創新交付 ＋ 獨立第二道防線數位主權」的三權分立架構。
+      </p>
+
+      <div class="miro-grid-3">
+        <div class="miro-card">
+          <div class="miro-card-kicker">CIO 資訊長 (1st Line)</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">營運賦能與多雲管理</h3>
+          <p style="font-size:12.5px; color:var(--text-charcoal);">
+            • 核心系統：SAP S/4HANA、LIMS、MES、全球 SD-WAN。<br>
+            • 核心目標：99.99% 高可用、FinOps 成本優化 -30%。
+          </p>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">CTO 技術長 (R&D Line)</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">生醫研發與前瞻技術</h3>
+          <p style="font-size:12.5px; color:var(--text-charcoal);">
+            • 核心範疇：AI 藥物篩選、生物資訊運算、EDC 數據。<br>
+            • 核心目標：新藥研發效率 +50%、IND/NDA 數據 100% 準時。
+          </p>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">CISO 資安長 (2nd Line)</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">數位主權與韌性防禦</h3>
+          <p style="font-size:12.5px; color:var(--text-charcoal);">
+            • 核心範疇：NIST CSF 2.0、Besremi 專利防護、DFIR 應變。<br>
+            • 核心目標：專利 0 外洩、台中廠正常、FDA 21 CFR 11 合規。
+          </p>
+        </div>
+      </div>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>職能角色</th>
+            <th>組織定位與匯報線</th>
+            <th>藥華醫藥專屬管轄系統</th>
+            <th>董事會考核核心量化 KPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CIO (資訊長)</strong></td>
+            <td>第一道防線<br>直屬 CEO</td>
+            <td>集團 SAP S/4HANA、LIMS、MES、全球跨國 SD-WAN 骨幹、多雲基礎架構 (AWS/Azure/GCP)。</td>
+            <td>• Tier-0 系統可用度達 99.99% (零非計畫中斷)。<br>• 多雲架構 TCO 每年最佳化 -25% 至 -30%。<br>• IT 專案準時交付率 > 90%。</td>
+          </tr>
+          <tr>
+            <td><strong>CTO (技術長)</strong></td>
+            <td>研發創新線<br>直屬 CEO</td>
+            <td>AI 輔助新藥分子篩選平台、生物資訊數據管線 (Bioinformatics Pipeline)、臨床 EDC/CDISC。</td>
+            <td>• 研發數據產出效率提升 +30% 至 +50%。<br>• 核心演算法專利申報準時率 100%。<br>• 核心運算管線效能翻倍。</td>
+          </tr>
+          <tr>
+            <td><strong>CISO (我/資安長)</strong></td>
+            <td>獨立第二道防線<br>直屬 CEO / 審計會</td>
+            <td>全集團 NIST CSF 2.0 韌性體系、Besremi 專利 CMK 加密、UEBA 行為 AI 監測、不可變備份 WORM。</td>
+            <td>• 核心研發專利 CMC 零外洩與台中廠 100% 穩定。<br>• EDR 覆蓋率 > 99.5% 且 MTTD < 15 分鐘。<br>• 100% 通過 FDA 21 CFR 11 與 ISO 27001 查核。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="miro-callout">
+        <div class="miro-callout-header">
+          <span>⚡</span>
+          <span>藥華醫藥生醫場景：跨職能協同與制衡機制 (Gartner Blueprint)</span>
+        </div>
+        <ul>
+          <li><strong>ERP / LIMS 系統升級：</strong>CIO 團隊主導架構與建置；CISO (我) 執行 DevSecOps 弱點掃描；QA/CSV 專員執行 21 CFR Part 11 Audit Trail 確效，三方聯合簽核放行。</li>
+          <li><strong>AI 輔助新藥研發防洩密：</strong>CTO 開發 AI 篩選模型；CIO 調撥 GPU 運算資源；CISO (我) 導入 ISO 42001 (AISDLC) 與 UEBA 監控，杜絕研發專利分子式外流。</li>
+          <li><strong>台中蛋白質製造廠產線維護：</strong>CIO 維運底層工廠網路；CISO (我) 嚴格落實 Purdue Model 實體隔離 (Air-gap)；廠長與 QA 共同簽核任何外部連線變更。</li>
+          <li><strong>重大資安事件戰時復原：</strong>CISO (我) 擔任 Incident Commander 執行受控隔離；CIO 調撥 Clean Room 還原備份；QA/CSV 與 CISO 共同簽字放行復線。</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Tab 4: UEBA Behavioral AI -->
@@ -965,7 +1055,7 @@
     <div id="miro-downloads" class="tab-content">
       <h1 class="tab-headline">
         <span>📁</span>
-        <span>正式報告與技術文件下載中心 (7 份完整 Word 報告)</span>
+        <span>正式報告與技術文件下載中心 (8 份完整 Word 報告)</span>
       </h1>
       <p class="tab-lead">
         以下為本案產出之 7 份高階 Word 格式正式報告與程序書，均已完成專業排版、米羅色系套用與簽核欄位配置：
@@ -1026,6 +1116,13 @@
         </div>
         <a class="dl-action-btn" href="PharmaEssentia_Routine_Reporting_Framework.docx">📥 下載 Word 檔</a>
       </div>
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>8. 藥華醫藥集團 CIO / CTO / CISO 組織架構圖 暨 職掌分工權責章程</h4>
+          <p>PharmaEssentia_CIO_CTO_CISO_Governance_Charter.docx ｜ Gartner 治理鐵三角</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_CIO_CTO_CISO_Governance_Charter.docx">📥 下載 Word 檔</a>
+      </div>
     </div>
 
     <!-- Sign-off Block at Bottom of Page -->
@@ -1042,6 +1139,13 @@
         <div class="sign-title">✦ 核定 (Board / Audit Committee)</div>
         <p>董事長 / 審計委員會代表<br><br>日期：2026 年 8 月 &nbsp;&nbsp;&nbsp;&nbsp; 日</p>
       </div>
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>8. 藥華醫藥集團 CIO / CTO / CISO 組織架構圖 暨 職掌分工權責章程</h4>
+          <p>PharmaEssentia_CIO_CTO_CISO_Governance_Charter.docx ｜ Gartner 治理鐵三角</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_CIO_CTO_CISO_Governance_Charter.docx">📥 下載 Word 檔</a>
+      </div>
     </div>
 
   </div>
@@ -1052,6 +1156,7 @@
     'overview': '總裁戰情儀表板 (Executive Overview)',
     'threat': '威脅與暗網鑑識 (Threat Deconstruction)',
     'plan180': 'CISO 180天就任戰略計劃書 (Strategic Roadmap)',
+    'governance': 'CIO/CTO/CISO 組織權責章程 (Governance Charter)',
     'ueba': 'UEBA 行為監測平台 (AI Behavioral ITDR)',
     'audit': '內部全域資產盤點 SOP (Asset Audit)',
     'dfir': 'DFIR 團隊進駐程序與 WBS (Forensic Engagement)',
