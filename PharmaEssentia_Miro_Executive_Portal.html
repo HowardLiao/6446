@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>藥華醫藥（6446）全球資安治理與戰時應變總裁戰情專區 ｜ 廖倫豪 博士</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@600;700&display=swap');
+
+  :root {
+    --bg-white: #FFFFFF;
+    --bg-warm-light: #FFFBF7;
+    --bg-citrus-card: #FFF8F0;
+    --text-charcoal: #232629;
+    --text-muted: #5F6670;
+    --accent-orange: #E8590C;
+    --accent-orange-bright: #FF6B35;
+    --accent-amber: #D97706;
+    --accent-yellow-light: #FFF9DB;
+    --accent-rust: #C92A2A;
+    --border-orange: #FFD8A8;
+    --border-subtle: #F1F3F5;
+    --font-rounded: 'Nunito', 'Quicksand', 'Noto Sans TC', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg-white);
+    color: var(--text-charcoal);
+    font-family: var(--font-rounded);
+    line-height: 1.7;
+    font-size: 14.5px;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Sidebar Navigation (Miró Style) */
+  #sidebar {
+    width: 310px;
+    background: var(--bg-warm-light);
+    border-right: 2px solid var(--border-orange);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 4px 0 20px rgba(232, 89, 12, 0.04);
+  }
+
+  .sidebar-header {
+    padding: 26px 20px;
+    border-bottom: 2px dashed var(--border-orange);
+    background: radial-gradient(circle at 10% 20%, #FFF4E6 0%, #FFFFFF 80%);
+  }
+
+  .brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-orange);
+    color: #FFFFFF;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .brand-title {
+    font-size: 17.5px;
+    font-weight: 900;
+    color: var(--accent-orange);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-author {
+    font-size: 12px;
+    color: var(--text-charcoal);
+    font-weight: 700;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nav-list {
+    list-style: none;
+    padding: 14px 10px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .nav-item {
+    padding: 11px 14px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .nav-item:hover {
+    background: #FFF4E6;
+    color: var(--accent-orange);
+    border-color: var(--border-orange);
+    transform: translateX(3px);
+  }
+
+  .nav-item.active {
+    background: #FFE8D6;
+    color: var(--accent-orange);
+    border: 1.5px solid var(--accent-orange);
+    box-shadow: 0 4px 12px rgba(232, 89, 12, 0.12);
+  }
+
+  .nav-tag {
+    font-size: 9.5px;
+    font-family: var(--font-mono);
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: var(--accent-amber);
+    border: 1px solid var(--border-orange);
+  }
+
+  .sidebar-footer {
+    padding: 14px 18px;
+    border-top: 2px dashed var(--border-orange);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: #FFFFFF;
+    font-weight: 600;
+  }
+
+  /* Main Workspace Area */
+  #main-workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #FFFFFF;
+  }
+
+  .top-banner {
+    height: 65px;
+    border-bottom: 1.5px solid var(--border-orange);
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    flex-shrink: 0;
+  }
+
+  .top-title-text {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text-charcoal);
+  }
+
+  .top-title-text span {
+    color: var(--accent-orange);
+  }
+
+  .status-badge-miro {
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--accent-yellow-light);
+    color: var(--accent-amber);
+    border: 1.5px solid var(--accent-amber);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .status-badge-miro::before {
+    content: '●';
+    color: var(--accent-orange);
+    font-size: 12px;
+  }
+
+  .scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 36px 48px;
+    background: radial-gradient(circle at 95% 5%, rgba(255, 107, 53, 0.04) 0%, transparent 60%);
+  }
+
+  .tab-content {
+    display: none;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .tab-content.active {
+    display: block;
+    animation: miroPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes miroPop {
+    from { opacity: 0; transform: scale(0.99) translateY(8px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* Headings & Text */
+  h1.tab-headline {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--accent-orange);
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  p.tab-lead {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 26px;
+  }
+
+  /* Grids & Cards (Miró Rounded Vector Cards) */
+  .miro-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .miro-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .miro-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .miro-card {
+    background: var(--bg-citrus-card);
+    border: 2px solid var(--border-orange);
+    border-radius: 16px;
+    padding: 22px;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(232, 89, 12, 0.05);
+    transition: all 0.2s ease;
+  }
+
+  .miro-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-orange);
+    box-shadow: 0 8px 24px rgba(232, 89, 12, 0.1);
+  }
+
+  .miro-card-kicker {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    font-weight: 900;
+    color: var(--accent-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .miro-card-metric {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--accent-orange);
+    margin-bottom: 4px;
+    font-family: var(--font-rounded);
+  }
+
+  .miro-card-desc {
+    font-size: 12px;
+    color: var(--text-charcoal);
+    font-weight: 600;
+  }
+
+  /* Callout & Focus Box */
+  .miro-callout {
+    background: #FFF9F5;
+    border: 2px solid var(--accent-orange);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-bottom: 26px;
+    box-shadow: 0 6px 20px rgba(232, 89, 12, 0.06);
+  }
+
+  .miro-callout-header {
+    font-size: 14.5px;
+    font-weight: 900;
+    color: var(--accent-orange);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .miro-callout ul, .miro-callout ol {
+    padding-left: 22px;
+    font-size: 13.5px;
+    color: var(--text-charcoal);
+    font-weight: 600;
+  }
+
+  .miro-callout li {
+    margin-bottom: 8px;
+  }
+
+  /* Miró Styled Tables */
+  table.miro-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 16px 0 24px 0;
+    border: 2px solid var(--border-orange);
+    border-radius: 14px;
+    overflow: hidden;
+    font-size: 13.5px;
+  }
+
+  table.miro-table th {
+    background: #FFE8D6;
+    color: var(--accent-orange);
+    font-weight: 900;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--border-orange);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+
+  table.miro-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border-orange);
+    color: var(--text-charcoal);
+    font-weight: 600;
+    vertical-align: top;
+    background: #FFFFFF;
+  }
+
+  table.miro-table tr:nth-child(even) td {
+    background: #FFFDFB;
+  }
+
+  table.miro-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Tag Badges */
+  .tag-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    font-family: var(--font-mono);
+  }
+
+  .tag-orange { background: #FFE8D6; color: var(--accent-orange); border: 1px solid var(--accent-orange); }
+  .tag-amber { background: var(--accent-yellow-light); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+  .tag-rust { background: #FFE3E3; color: var(--accent-rust); border: 1px solid var(--accent-rust); }
+
+  /* Download Items */
+  .download-card {
+    background: #FFFFFF;
+    border: 2px solid var(--border-orange);
+    border-radius: 14px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .download-card:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 6px 18px rgba(232, 89, 12, 0.08);
+    transform: translateX(4px);
+  }
+
+  .dl-left h4 {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 3px;
+  }
+
+  .dl-left p {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .dl-action-btn {
+    background: var(--accent-orange);
+    color: #FFFFFF;
+    padding: 9px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(232, 89, 12, 0.25);
+    transition: all 0.2s ease;
+  }
+
+  .dl-action-btn:hover {
+    background: var(--accent-orange-bright);
+    transform: scale(1.03);
+  }
+
+  /* Sign-off Blocks */
+  .sign-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 2px dashed var(--border-orange);
+  }
+
+  .sign-box {
+    border: 2px solid var(--border-orange);
+    border-radius: 14px;
+    padding: 18px;
+    background: var(--bg-citrus-card);
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .sign-title {
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--accent-orange);
+    margin-bottom: 12px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Left Miró Sidebar -->
+<div id="sidebar">
+  <div class="sidebar-header">
+    <div class="brand-badge">
+      <span>● ▲ ★</span>
+      <span>PHARMAESSENTIA 6446</span>
+    </div>
+    <div class="brand-title">藥華醫藥 全球資安總裁戰情專區</div>
+    <div class="brand-author">
+      <span style="color:var(--accent-orange);">✦ 報告人</span>
+      <span>Howard Liao Ph.D.(廖倫豪 博士)</span>
+    </div>
+  </div>
+
+  <ul class="nav-list">
+    <li class="nav-item active" onclick="showMiroTab('overview')">
+      <span>🎨 總裁戰情儀表板</span>
+      <span class="nav-tag">OVERVIEW</span>
+    </li>
+    <li class="nav-item" onclick="showMiroTab('threat')">
+      <span>🔍 威脅與暗網鑑識</span>
+      <span class="nav-tag">SEV-1</span>
+    </li>
+    <li class="nav-item" onclick="showMiroTab('plan180')">
+      <span>🛡️ 180天戰略計劃書</span>
+      <span class="nav-tag">CSF 2.0</span>
+    </li>
+    <li class="nav-item" onclick="showMiroTab('ueba')">
+      <span>🤖 UEBA 行為監測平台</span>
+      <span class="nav-tag">AI ITDR</span>
+    </li>
+    <li class="nav-item" onclick="showMiroTab('audit')">
+      <span>📋 全域資產盤點 SOP</span>
+      <span class="nav-tag">GxP</span>
+    </li>
+    <li class="nav-item" onclick="showMiroTab('dfir')">
+      <span>⚡ DFIR 團隊進駐 WBS</span>
+      <span class="nav-tag">14天</span>
+    </li>
+    <li class="nav-item" onclick="showMiroTab('routine')">
+      <span>📅 日/週/月/季預防體系</span>
+      <span class="nav-tag">IMMUNE</span>
+    </li>
+    <li class="nav-item" onclick="showMiroTab('assistant')">
+      <span>✉️ 總經理特助/Yuonne 決策函</span>
+      <span class="nav-tag">DUAL</span>
+    </li>
+    <li class="nav-item" onclick="showMiroTab('downloads')">
+      <span>📁 正式報告下載中心</span>
+      <span class="nav-tag">7 份</span>
+    </li>
+  </ul>
+
+  <div class="sidebar-footer">
+    <div>標準：NIST CSF 2.0 ｜ FDA 21 CFR 11</div>
+    <div>密級：極機密 (TLP:AMBER) ｜ 2026 Q3</div>
+  </div>
+</div>
+
+<!-- Main Workspace -->
+<div id="main-workspace">
+  <div class="top-banner">
+    <div class="top-title-text">
+      藥華醫藥全球資安治理 ｜ <span id="active-tab-name">總裁戰情儀表板</span>
+    </div>
+    <div class="status-badge-miro">
+      <span>核心專利 CMC 加密正常 ｜ 生產 100% 穩定</span>
+    </div>
+  </div>
+
+  <div class="scroll-container">
+
+    <!-- Tab 1: Overview -->
+    <div id="miro-overview" class="tab-content active">
+      <h1 class="tab-headline">
+        <span>●</span>
+        <span>總裁戰情儀表板 ｜ 全球資安韌性總綱</span>
+      </h1>
+      <p class="tab-lead">
+        我是廖倫豪博士。本戰情專區整合我針對藥華醫藥近期遭受 TheGentlemen 組織勒索事件之客觀鑑識報告、GxP 合規確效、UEBA 行為 AI 監測、雙軌平行應變模型與「總經理特助先行進用 ＋ 董事會真除 CISO」戰略全景。
+      </p>
+
+      <div class="miro-grid-4">
+        <div class="miro-card">
+          <div class="miro-card-kicker">CROWN JEWELS</div>
+          <div class="miro-card-metric">0 外洩</div>
+          <div class="miro-card-desc">Besremi 專利 CMC 加密完好</div>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">PRODUCTION OT</div>
+          <div class="miro-card-metric">100% 正常</div>
+          <div class="miro-card-desc">台中 GMP 廠 Purdue 隔離</div>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">EDR COVERAGE</div>
+          <div class="miro-card-metric">99.6%</div>
+          <div class="miro-card-desc">泛泰等 18 台盲點已補齊</div>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">IMMUTABLE BACKUP</div>
+          <div class="miro-card-metric">WORM 鎖定</div>
+          <div class="miro-card-desc">S3 Object Lock 乾淨可復原</div>
+        </div>
+      </div>
+
+      <div class="miro-callout">
+        <div class="miro-callout-header">
+          <span>✦</span>
+          <span>我的五大核心戰略判定 (Key Determinations)</span>
+        </div>
+        <ol>
+          <li><strong>核心專利與生產製造受控：</strong>我核實藥華藥核心專利（Besremi® CMC 參數）底層結構化加密完好，台中蛋白質新藥廠 GMP 產線 Purdue Model 實體隔離正常，全球供藥無中斷。</li>
+          <li><strong>判定暗網威脅本質為聲譽施壓：</strong>TheGentlemen 勒索組織於暗網釋出之檔案屬子公司一般公務通訊錄與零星行政表單，無核心研發機密外洩。</li>
+          <li><strong>引進 UEBA 動態行為監測平台：</strong>從傳統抓靜態特徵碼升級為 AI 身分行為基準線獵捕，守護 CMC 專利防竊密並自動化落實 FDA 21 CFR Part 11 Audit Trail 審查。</li>
+          <li><strong>確立總經理特助先行進駐模式：</strong>以「總經理室 資安與資訊科技特助」於 48 小時內合法起聘，享有法定授權與 D&O 責任險，同步推進董事會 CISO 真除程序。</li>
+          <li><strong>建立日/週/月/季/年長態免疫體系：</strong>以 NIST CSF 2.0 六大功能重塑自適應防禦，推動特權 FIDO2 MFA、不可變備份 WORM 鎖定與 DMARC p=reject 全球防偽冒。</li>
+        </ol>
+      </div>
+
+      <div class="miro-grid-2">
+        <div class="miro-card">
+          <div class="miro-card-kicker">DUAL-TRACK MODEL</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:8px;">雙軌平行推進機制</h3>
+          <p style="font-size:13px; color:var(--text-charcoal);">
+            • <strong>軌道一 (技術應變)</strong>：第三方 DFIR 專案滅火，享有律師保密特權（Attorney-Client Privilege）與司法證據鏈。<br>
+            • <strong>軌道二 (長遠治理)</strong>：以總經理特助先行進駐統籌，並參與董事會與審計委員會正式 CISO 遴選。
+          </p>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">BOARD KRI DASHBOARD</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:8px;">一頁式董事會治理報告</h3>
+          <p style="font-size:13px; color:var(--text-charcoal);">
+            將技術指標轉化為商業風險語言，嚴格監控 P90 偵測時間、不可變備份演練成功率、特權帳號 MFA 覆蓋率與供應鏈合約合規率。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Threat & Darkweb -->
+    <div id="miro-threat" class="tab-content">
+      <h1 class="tab-headline">
+        <span>▲</span>
+        <span>威脅解構：TheGentlemen 勒索事件客觀鑑識</span>
+      </h1>
+      <p class="tab-lead">
+        結合開源情報（OSINT/CTI）、暗網洩密追蹤與 MITRE ATT&CK 攻擊鏈，精準剖析事件原由與影響範疇。
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>鑑識與情報維度</th>
+            <th>客觀事實與攻擊特徵</th>
+            <th>治理與營運衝擊判定</th>
+            <th>安全狀態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>暗網洩密點名<br>(DLS Analysis)</strong></td>
+            <td>TheGentlemen 於 8/9–8/10 點名 PharmaEssentia，展示 finance_2024.xlsx、合約及護照縮圖。</td>
+            <td>展示資料侷限於子公司一般行政與公務通訊錄，未見核心研發 CMC 數據或大量未去識別化臨床受試者資料。</td>
+            <td><span class="tag-pill tag-orange">核心無損</span></td>
+          </tr>
+          <tr>
+            <td><strong>攻擊鏈與技術路徑<br>(MITRE TTPs)</strong></td>
+            <td>利用歷史外洩帳密/邊界 VPN 弱點突破泛泰醫療邊界，橫向探索並寄發 200h 倒數信件。</td>
+            <td>凸顯跨國子公司 IT 邊界微隔離不足、非抗釣魚 MFA 弱點及 DMARC 尚未強制 reject 之缺口。</td>
+            <td><span class="tag-pill tag-amber">已完成阻斷</span></td>
+          </tr>
+          <tr>
+            <td><strong>生產與商業營運<br>(Operational Blast)</strong></td>
+            <td>台中蛋白質製造廠 SCADA/PLC 實體隔離，臨床試驗 EDC 與 LIMS 獨立運作。</td>
+            <td>藥品製造無菌環境正常，批次紀錄（eBR）完整，對全球供藥、商業營收及財務無重大實質影響。</td>
+            <td><span class="tag-pill tag-orange">生產 100% 正常</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="miro-callout">
+        <div class="miro-callout-header">
+          <span>🚨</span>
+          <span>仿冒網域（Typosquatting）緊急下架清單</span>
+        </div>
+        <p style="font-size:13.5px;">攻擊者註冊之惡意網域已通報 Registrar 與 TWCERT/CC 執行全域 Takedown：</p>
+        <p style="font-family:var(--font-mono); font-size:13px; color:var(--accent-orange); margin-top:6px; font-weight:700;">
+          • pharmaessentiacorp.com (已阻斷) ｜ • pharmaessent1a.com (已阻斷) ｜ • pharmaessentia.com.tw (非官方/監控中)
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab 3: Plan 180 Days -->
+    <div id="miro-plan180" class="tab-content">
+      <h1 class="tab-headline">
+        <span>■</span>
+        <span>CISO 180 天就任戰略計劃書 (NIST CSF 2.0)</span>
+      </h1>
+      <p class="tab-lead">
+        以 NIST CSF 2.0 六大功能為骨幹，落實董事會風險胃納、三道防線獨立性與 GxP 生醫品質確效。
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>推進時程</th>
+            <th>NIST CSF 2.0 構面</th>
+            <th>我所主導之關鍵推進行動</th>
+            <th>核心交付成果 (Deliverables)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>第 0–30 天<br>(Assess)</strong></td>
+            <td>GOVERN<br>IDENTIFY</td>
+            <td>全集團外部攻擊面測繪（EASM）、Crown Jewels 專利盤點、簽署常年 DFIR Retainer、建立 SEV-1 緊急授權。</td>
+            <td>《集團資安風險地圖》、《不可變備份健康審計報告》、《SEV-1 戰時應變手冊》</td>
+          </tr>
+          <tr>
+            <td><strong>第 31–60 天<br>(Design)</strong></td>
+            <td>PROTECT<br>DETECT</td>
+            <td>全域郵件配置 DMARC p=reject、強制 FIDO2 抗釣魚 MFA、部署核心伺服器網段微隔離與 OT DMZ。</td>
+            <td>《特權身分零信任導入計畫》、《DMARC 推進路線圖》、《台中廠 OT 隔離檢核清冊》</td>
+          </tr>
+          <tr>
+            <td><strong>第 61–90 天<br>(Pilot)</strong></td>
+            <td>GOVERN<br>RESPOND</td>
+            <td>主導 1 次董事會重大資安兵推、勒索/BEC 劇本實戰演練、對齊 ISO 27001 與 ISO 42001（AI 治理）。</td>
+            <td>《董事會資安兵推總結報告》、《ISO 27001/42001 差距分析》、《第三方供應鏈合約條款》</td>
+          </tr>
+          <tr>
+            <td><strong>第 91–180 天<br>(Scale)</strong></td>
+            <td>RECOVER<br>GOVERN</td>
+            <td>Top 3 SOAR 自動化劇本導入、AI 輔助 SecOps 威脅獵捕、多雲 FinOps 成本最佳化、上線 CISO Dashboard v1。</td>
+            <td>《全球多雲自適應防禦架構》、《集團即時 KRI/KPI 儀表板》、《年度資安預算效益報告》</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tab 4: UEBA Behavioral AI -->
+    <div id="miro-ueba" class="tab-content">
+      <h1 class="tab-headline">
+        <span>🤖</span>
+        <span>使用者與實體行為分析監測平台 (UEBA / ITDR)</span>
+      </h1>
+      <p class="tab-lead">
+        從被動防禦已知病毒，邁向主動識別「合法帳號做壞事」的 AI 動態行為建模體系。
+      </p>
+
+      <div class="miro-grid-3">
+        <div class="miro-card">
+          <div class="miro-card-kicker">IMPOSSIBLE TRAVEL</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">跨國異常登入秒級獵捕</h3>
+          <p style="font-size:12.5px; color:var(--text-charcoal);">
+            台北同仁登入後 1 小時內自東歐 VPN 連入，UEBA 判定為憑證外洩，自動撤銷 Token 並強制 FIDO2。
+          </p>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">IP THEFT PREVENTION</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">Besremi 專利防竊密</h3>
+          <p style="font-size:12.5px; color:var(--text-charcoal);">
+            監控研發人員與即將異動者，短時間批次導出 CMC 分子結構或深夜異常下載時，立即凍結權限。
+          </p>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">GxP AUDIT TRAIL</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">21 CFR Part 11 自動稽核</h3>
+          <p style="font-size:12.5px; color:var(--text-charcoal);">
+            AI 自動分析 LIMS、MES 與 CDS 軌跡，自動標註非品檢時段修改與時間戳跳躍，出具 Deviation 偏差報告。
+          </p>
+        </div>
+      </div>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>架構層級</th>
+            <th>技術元件與數據源</th>
+            <th>藥華醫藥實施目標</th>
+            <th>技術優先級</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>數據來源層<br>(Data Sources)</strong></td>
+            <td>Microsoft Entra ID、CrowdStrike EDR、LIMS/MES GxP 日誌、VPN NetFlow。</td>
+            <td>全域日誌正規化，建立 30 天個人與實體行為基準線（Baseline）。</td>
+            <td><span class="tag-pill tag-rust">P0 基礎</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI 運算引擎<br>(Behavioral AI)</strong></td>
+            <td>Microsoft Sentinel UEBA / CrowdStrike Falcon Identity ITDR。</td>
+            <td>同儕分群（Peer Grouping）、動態風險計分（0-100）、偏離基線即時告警。</td>
+            <td><span class="tag-pill tag-orange">核心引擎</span></td>
+          </tr>
+          <tr>
+            <td><strong>自動化處置<br>(SOAR Action)</strong></td>
+            <td>Conditional Access 條件式存取、API 撤銷 Token、端點 Host Isolation。</td>
+            <td>風險評分 > 85 分時，秒級自動阻斷機密下載並升級驗證。</td>
+            <td><span class="tag-pill tag-amber">自動防禦</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tab 5: Audit & SOP -->
+    <div id="miro-audit" class="tab-content">
+      <h1 class="tab-headline">
+        <span>✦</span>
+        <span>內部全域資產盤點與四大技術兵種 SOP</span>
+      </h1>
+      <p class="tab-lead">
+        我親自指揮資安專責團隊完成全集團六大維度技術盤點，並由四大技術主管落實標準處置指令。
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>技術兵種</th>
+            <th>主管角色</th>
+            <th>我所指派之盤點作業項目</th>
+            <th>即刻處置執行指令 (Action Commands)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>網路通訊<br>(Network)</strong></td>
+            <td>網路主管</td>
+            <td>清查公網暴露面、VPN/Jump Host、泛泰醫療 Site-to-Site 專線。</td>
+            <td>切斷泛泰 VPN 專線、內部封鎖 445/135/3389 埠、邊界阻斷 TOR/MEGA、啟用 DNS RPZ。</td>
+          </tr>
+          <tr>
+            <td><strong>基礎架構<br>(Infra)</strong></td>
+            <td>硬體主管</td>
+            <td>盤點 VMware ESXi 狀態、S3 Object Lock (WORM) 備份庫健康度。</td>
+            <td>備份主機物理斷網 (Air-gap)、受害 VM 拔 vNIC 拍記憶體快照、搭建獨立 Clean Room。</td>
+          </tr>
+          <tr>
+            <td><strong>資安運維<br>(SecOps)</strong></td>
+            <td>資安主管</td>
+            <td>清查全域 EDR 安裝盲點（覆蓋率 99.6%）、暗網 DLS 監控。</td>
+            <td>下發端點網路隔離、採集 RAM Dump 建立證據鏈、全域派發專案 IOC 規則清零。</td>
+          </tr>
+          <tr>
+            <td><strong>企業應用<br>(Apps/MIS)</strong></td>
+            <td>MIS 主管</td>
+            <td>盤點 Domain Admins、委外廠商帳號、13+ 筆外洩帳密比對。</td>
+            <td>停用廠商/閒置帳號、強制重設管理員密碼、krbtgt 雙重輪替、業務切換 BCP 手工作業。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tab 6: DFIR WBS -->
+    <div id="miro-dfir" class="tab-content">
+      <h1 class="tab-headline">
+        <span>★</span>
+        <span>DFIR 團隊進駐程序與專案工作分解結構 (WBS)</span>
+      </h1>
+      <p class="tab-lead">
+        由外部法務正式委任第三方專業鑑識團隊，確保享有律師保密特權（Attorney-Client Privilege）與司法證據鏈。
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>WBS 代碼</th>
+            <th>工作包名稱 (Work Package)</th>
+            <th>關鍵交付成果 (Deliverables)</th>
+            <th>主責角色</th>
+            <th>時效 SLA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1.1 - 1.2</strong></td>
+            <td>法律特權與範疇界定</td>
+            <td>簽署委任書、確立 Attorney-Client Privilege</td>
+            <td>法務長 / DFIR Lead</td>
+            <td>T+4h</td>
+          </tr>
+          <tr>
+            <td><strong>2.1 - 2.3</strong></td>
+            <td>數位證據採集與保全</td>
+            <td>RAM Dump 映像檔、KAPE 假影包、SHA-256 CoC 監管清冊</td>
+            <td>鑑識工程師</td>
+            <td>T+18h</td>
+          </tr>
+          <tr>
+            <td><strong>3.1 - 3.3</strong></td>
+            <td>深度鑑識與攻擊鏈重組</td>
+            <td>初始入侵點報告、Mimikatz/WMI 軌跡、專案 IOC 特徵庫</td>
+            <td>資深鑑識專家</td>
+            <td>T+36h</td>
+          </tr>
+          <tr>
+            <td><strong>4.1 - 4.2</strong></td>
+            <td>暗網比對與王冠資產判定</td>
+            <td>暗網真實性比對表、Besremi 專利 CMC 安全性評估報告</td>
+            <td>鑑識專家 / QA Lead</td>
+            <td>T+48h</td>
+          </tr>
+          <tr>
+            <td><strong>5.1 - 5.3</strong></td>
+            <td>根除圍堵與 Clean Room 放行</td>
+            <td>全域 IOC 清查確認單、krbtgt 輪替驗證、Gate 4 安全放行證明</td>
+            <td>DFIR Lead</td>
+            <td>T+72h</td>
+          </tr>
+          <tr>
+            <td><strong>6.1 - 6.2</strong></td>
+            <td>正式結案報告與法規答辯</td>
+            <td>《DFIR 正式調查報告書》、主管機關技術申報答辯書</td>
+            <td>DFIR / 法務 / CISO</td>
+            <td>T+7d - 14d</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tab 7: Routine Cadence -->
+    <div id="miro-routine" class="tab-content">
+      <h1 class="tab-headline">
+        <span>◎</span>
+        <span>日常主動預防監控與報告體系 (日/週/月/季/年)</span>
+      </h1>
+      <p class="tab-lead">
+        我為藥華醫藥建立長態免疫機制，確保任何微小異常在第一時間被捕捉並消滅。
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>週期</th>
+            <th>報告名稱</th>
+            <th>主責單位</th>
+            <th>核心監控指標與內容</th>
+            <th>預防發動門檻</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag-pill tag-rust">日報</span></td>
+            <td><strong>《SOC 7x24 威脅監控與高危告警日報》</strong></td>
+            <td>SecOps / SOC</td>
+            <td>SIEM/EDR 近 24h 告警分類、可疑 PowerShell 執行、未解清單。</td>
+            <td>出現 Critical 告警，15 分鐘內隔離。</td>
+          </tr>
+          <tr>
+            <td><span class="tag-pill tag-rust">日報</span></td>
+            <td><strong>《EASM 外部攻擊面與仿冒網域日報》</strong></td>
+            <td>威脅情資組</td>
+            <td>公網 IP/Port 異動、新註冊相似網域、暗網情資。</td>
+            <td>發現仿冒網域，當日發動 Takedown。</td>
+          </tr>
+          <tr>
+            <td><span class="tag-pill tag-orange">週報</span></td>
+            <td><strong>《弱點掃描與修補 SLA 追蹤週報》</strong></td>
+            <td>IT 基礎 / SecOps</td>
+            <td>自動弱點掃描、Critical 弱點修補 SLA（24-72h 達標率）。</td>
+            <td>Internet 弱點逾期未修補，強制下線。</td>
+          </tr>
+          <tr>
+            <td><span class="tag-pill tag-orange">週報</span></td>
+            <td><strong>《全域郵件安全與 DMARC 週報》</strong></td>
+            <td>郵件維運組</td>
+            <td>SPF/DKIM 對齊率、DMARC 阻斷郵件數、釣魚通報統計。</td>
+            <td>累積 3 起同源釣魚，全域自動撤回。</td>
+          </tr>
+          <tr>
+            <td><span class="tag-pill tag-amber">月報</span></td>
+            <td><strong>《不可變備份健康與還原演練月報》</strong></td>
+            <td>基礎架構組</td>
+            <td>Veeam/S3 WORM 鎖定驗證、Tier-0 抽樣還原成功率。</td>
+            <td>測試失敗項目，30 日內整改再測。</td>
+          </tr>
+          <tr>
+            <td><span class="tag-pill tag-amber">月報</span></td>
+            <td><strong>《GxP / 21 CFR Part 11 Audit Trail 月報》</strong></td>
+            <td>品質 QA / CSV</td>
+            <td>LIMS、CDS 與 MES 批次記錄 Audit Trail 異常過濾。</td>
+            <td>發現 Audit Trail 異常，發起 Deviation。</td>
+          </tr>
+          <tr>
+            <td><span class="tag-pill tag-orange">季報</span></td>
+            <td><strong>《董事會與審計委員會資安治理報告》</strong></td>
+            <td>集團 CISO (我)</td>
+            <td>雙軌 KRI/KPI 達成率（P90 指標）、重大風險例外清冊。</td>
+            <td>超出風險胃納，提報專案補償控制。</td>
+          </tr>
+          <tr>
+            <td><span class="tag-pill tag-orange">年報</span></td>
+            <td><strong>《集團年度資安成熟度與轉型報告》</strong></td>
+            <td>集團 CISO (我)</td>
+            <td>NIST CSF 2.0 成熟度結算、TCO 投資效益、永續韌性指標。</td>
+            <td>制定次年度資安資本支出（CapEx）預算。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tab 8: Assistant / Yuonne -->
+    <div id="miro-assistant" class="tab-content">
+      <h1 class="tab-headline">
+        <span>〰</span>
+        <span>總經理特助先行進用 ＋ 董事會真除 CISO 決策備忘錄</span>
+      </h1>
+      <p class="tab-lead">
+        以「總經理特助」破局解決人資兩難，兼顧即刻進駐救火、合法經理人授權與董事會公開遴選程序。
+      </p>
+
+      <div class="miro-callout">
+        <div class="miro-callout-header">
+          <span>⚡</span>
+          <span>特助進用模式的三大治理優勢 (Why Special Assistant to CEO?)</span>
+        </div>
+        <ol>
+          <li><strong>總經理專屬權限直接起聘（48 小時內發 Offer）：</strong>總經理對特助擁有 100% 直聘權限，無須等每季董事會開會，本週即可起聘進駐。</li>
+          <li><strong>具備實質跨部門調度權限（CEO 尚方寶劍）：</strong>特助代表 CEO 意志，名正言順調度 IT、SecOps、要求泛泰醫療專線配合，並督導外部 DFIR 鑑識團隊。</li>
+          <li><strong>內控與利益衝突完全解套：</strong>我以公司內部高階幹部身分作為 DFIR 甲方驗收者，無「球員兼裁判」疑慮；人資處同步呈報審計委員會進行客觀比較，於後續董事會正式真除 CISO。</li>
+        </ol>
+      </div>
+
+      <div class="miro-grid-2">
+        <div class="miro-card">
+          <div class="miro-card-kicker">YUONNE'S PROPOSAL</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:8px;">Yuonne 給人資長/總經理簽呈</h3>
+          <p style="font-size:13px; color:var(--text-charcoal);">
+            1. 緊急應變需求：即刻引入高階戰力。<br>
+            2. 總經理特助起聘：統籌防禦並督導 DFIR。<br>
+            3. 董事會遴選銜接：列入 CISO 候選人後續真除。
+          </p>
+        </div>
+        <div class="miro-card">
+          <div class="miro-card-kicker">EXECUTIVE TALKING POINTS</div>
+          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:8px;">我給 Yuonne 的溝通話術</h3>
+          <p style="font-size:13px; color:var(--text-charcoal);">
+            「Yuonne，用總經理特助起聘我，公司明天就有最強即戰力，總經理最省事，董事會程序完全合規，我也能在健全體制下全力作戰！」
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 9: Downloads -->
+    <div id="miro-downloads" class="tab-content">
+      <h1 class="tab-headline">
+        <span>📁</span>
+        <span>正式報告與技術文件下載中心 (7 份完整 Word 報告)</span>
+      </h1>
+      <p class="tab-lead">
+        以下為本案產出之 7 份高階 Word 格式正式報告與程序書，均已完成專業排版、米羅色系套用與簽核欄位配置：
+      </p>
+
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>1. 藥華醫藥集團 全球資安治理與戰時應變策略報告 (米蘭社論版)</h4>
+          <p>PharmaEssentia_Milan_Editorial_Strategic_Report.docx ｜ 董事會核定本</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_Milan_Editorial_Strategic_Report.docx">📥 下載 Word 檔</a>
+      </div>
+
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>2. 藥華醫藥資安應變小組（CSIRT）編組名冊與全域資產盤點 SOP</h4>
+          <p>PharmaEssentia_CSIRT_Roster_and_Audit_Procedures.docx ｜ RACI 權責矩陣</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_CSIRT_Roster_and_Audit_Procedures.docx">📥 下載 Word 檔</a>
+      </div>
+
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>3. 重大資安事件各單位執行程序書 (SOP) 暨 WBS 分工規劃書</h4>
+          <p>PharmaEssentia_Unit_SOP_and_WBS.docx ｜ 7 大職能 SOP + 14 個工作包</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_Unit_SOP_and_WBS.docx">📥 下載 Word 檔</a>
+      </div>
+
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>4. 數位鑑識與事件應變（DFIR）標準程序 暨 WBS 專案報告書 (米羅版)</h4>
+          <p>PharmaEssentia_DFIR_Miro_Report.docx ｜ 司法證據鏈 + GxP 確效對接</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_DFIR_Miro_Report.docx">📥 下載 Word 檔</a>
+      </div>
+
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>5. 內部資安威脅獵捕、資產盲點與全域稽核盤點報告書 (米羅版)</h4>
+          <p>PharmaEssentia_Internal_Audit_Miro_Report.docx ｜ 六大維度清查結果</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_Internal_Audit_Miro_Report.docx">📥 下載 Word 檔</a>
+      </div>
+
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>6. 使用者與實體行為分析 (UEBA / ITDR) 監測平台規劃報告書</h4>
+          <p>PharmaEssentia_UEBA_Behavioral_Monitoring_Framework.docx ｜ AI 身分動態監控</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_UEBA_Behavioral_Monitoring_Framework.docx">📥 下載 Word 檔</a>
+      </div>
+
+      <div class="download-card">
+        <div class="dl-left">
+          <h4>7. 日常（日/週/月/季/年）主動預防資安監控與治理報告體系</h4>
+          <p>PharmaEssentia_Routine_Reporting_Framework.docx ｜ 長態免疫運維指南</p>
+        </div>
+        <a class="dl-action-btn" href="PharmaEssentia_Routine_Reporting_Framework.docx">📥 下載 Word 檔</a>
+      </div>
+    </div>
+
+    <!-- Sign-off Block at Bottom of Page -->
+    <div class="sign-container">
+      <div class="sign-box">
+        <div class="sign-title">✦ 規劃提案人 (我 / 廖博士)</div>
+        <p>廖倫豪 博士 (Howard Liao, Ph.D.)<br>總經理室 資安特助 / Group CISO 候選人<br>日期：2026 年 8 月 31 日</p>
+      </div>
+      <div class="sign-box">
+        <div class="sign-title">✦ 審閱 (CHRO / CEO)</div>
+        <p>人資長 / 總經理 代表<br><br>日期：2026 年 8 月 &nbsp;&nbsp;&nbsp;&nbsp; 日</p>
+      </div>
+      <div class="sign-box">
+        <div class="sign-title">✦ 核定 (Board / Audit Committee)</div>
+        <p>董事長 / 審計委員會代表<br><br>日期：2026 年 8 月 &nbsp;&nbsp;&nbsp;&nbsp; 日</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const miroTitles = {
+    'overview': '總裁戰情儀表板 (Executive Overview)',
+    'threat': '威脅與暗網鑑識 (Threat Deconstruction)',
+    'plan180': 'CISO 180天就任戰略計劃書 (Strategic Roadmap)',
+    'ueba': 'UEBA 行為監測平台 (AI Behavioral ITDR)',
+    'audit': '內部全域資產盤點 SOP (Asset Audit)',
+    'dfir': 'DFIR 團隊進駐程序與 WBS (Forensic Engagement)',
+    'routine': '日常主動預防報告體系 (Preventive Cadence)',
+    'assistant': '總經理特助/Yuonne 決策函 (Special Assistant Path)',
+    'downloads': '正式報告下載中心 (Download Center)'
+  };
+
+  function showMiroTab(tabId) {
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    const target = document.getElementById('miro-' + tabId);
+    if (target) target.classList.add('active');
+
+    document.getElementById('active-tab-name').textContent = miroTitles[tabId] || '戰情專區';
+  }
+</script>
+</body>
+</html>
