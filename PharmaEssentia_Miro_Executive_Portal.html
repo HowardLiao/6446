@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+  <!-- Anti-Scraping & Privacy Protection -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>藥華醫藥（6446）全球資安治理與戰時應變總裁戰情專區 ｜ 廖倫豪 博士</title>
@@ -143,6 +147,63 @@
     color: var(--text-muted);
     background: #FFFFFF;
     font-weight: 600;
+  }
+
+  
+  /* Extra Attachment Integration Styles */
+  .tree-box {
+    background: #FFFDFB;
+    border: 1.5px solid var(--border-orange);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-charcoal);
+    white-space: pre;
+    overflow-x: auto;
+    margin: 16px 0 24px 0;
+    box-shadow: inset 0 2px 6px rgba(232, 89, 12, 0.03);
+  }
+  .miro-quote {
+    background: linear-gradient(135deg, #FFF4E6 0%, #FFFFFF 100%);
+    border-left: 5px solid var(--accent-orange);
+    border-radius: 0 14px 14px 0;
+    padding: 18px 24px;
+    margin: 22px 0 26px 0;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text-charcoal);
+    box-shadow: 0 4px 16px rgba(232, 89, 12, 0.05);
+    line-height: 1.75;
+  }
+  .section-subtitle {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--accent-orange);
+    margin: 30px 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.01em;
+  }
+  .source-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border: 1px solid #BFDBFE;
+    border-radius: 6px;
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 6px;
+  }
+  .source-badge:hover {
+    background: #DBEAFE;
+    text-decoration: underline;
   }
 
   /* Main Workspace Area */
@@ -492,8 +553,8 @@
       <span class="nav-tag">CSF 2.0</span>
     </li>
     <li class="nav-item" onclick="showMiroTab('governance')">
-      <span>🏛️ CIO/CTO/CISO 組織權責</span>
-      <span class="nav-tag">CHARTER</span>
+      <span>🏛️ 組織架構與治理原則</span>
+      <span class="nav-tag">MODEL</span>
     </li>
     <li class="nav-item" onclick="showMiroTab('gartner_cio')">
       <span>📈 Gartner 現代 CIO 轉型</span>
@@ -587,6 +648,17 @@
         </ol>
       </div>
 
+      <!-- Cyber Resilience Model Highlight -->
+      <div class="miro-quote">
+        <div style="font-size:12px; font-family:var(--font-mono); color:var(--accent-orange); text-transform:uppercase; margin-bottom:4px; font-weight:800;">
+          ✦ STRATEGIC NORTH STAR ｜ 藥華醫藥資安最高戰略定位
+        </div>
+        「保護研發與臨床價值、確保 GxP 與資料完整性、維持全球營運與供應韌性、並讓董事會能做出可追溯風險決策的企業治理功能。」
+        <div style="font-size:12.5px; font-weight:600; color:var(--text-muted); margin-top:6px;">
+          重點不是複製群創的工廠 OT Security 模式，而是將認證合規升級為「可偵測、可鑑識、可復原、可向董事會負責」的生醫韌性體系。
+        </div>
+      </div>
+
       <div class="miro-grid-2">
         <div class="miro-card">
           <div class="miro-card-kicker">DUAL-TRACK MODEL</div>
@@ -657,6 +729,47 @@
           • pharmaessentiacorp.com (已阻斷) ｜ • pharmaessent1a.com (已阻斷) ｜ • pharmaessentia.com.tw (非官方/監控中)
         </p>
       </div>
+
+      <!-- Three-Tier Incident Escalation Model -->
+      <div class="section-subtitle">
+        <span>⚡</span>
+        <span>藥華醫藥三層事件應變升級模型 (Three-Tier Incident Escalation Model)</span>
+        <a class="source-badge" href="https://www.ithome.com.tw/news/177838" target="_blank">🔗 2026/08 事件借鏡</a>
+      </div>
+      <p style="font-size:13.5px; color:var(--text-charcoal); margin-bottom:12px; font-weight:600;">
+        藥華的事件治理應避免僅由資訊部門處理；特別是涉及研發 IP、臨床資料、病患／員工個資、GxP 系統或上市公司揭露時，必須分層升級。2026 年 8 月事件已顯示這種三級架構的必要性：公司初期先對外說明「正盤點、初步評估」，但最終對資料外洩、GxP 完整性與實際業務影響的判斷，必須以<strong>鑑識證據而不是早期假設</strong>為基礎。
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>事件層級</th>
+            <th>情境例子</th>
+            <th>指揮與決策</th>
+            <th>時限與管控重點</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--accent-orange);">Level 1：一般事件</strong></td>
+            <td>單一端點惡意程式、低風險釣魚信、未涉及關鍵資料的帳號異常。</td>
+            <td>SecOps／IT 快速處理，定期彙整月報給 CISO。</td>
+            <td>快速隔離、清除復原、紀錄根因並納入持續改善清單。</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--accent-amber);">Level 2：重大事件</strong></td>
+            <td>多台主機感染、特權帳號疑遭濫用、關鍵 SaaS 或子公司受影響。</td>
+            <td>CISO 啟動 Incident Command；同步通知 CIO、法務、QA 及業務風險 Owner。</td>
+            <td>即時證據保全、全域範圍界定、決定主管機關通報與業務持續措施。</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--accent-rust);">Level 3：危機事件</strong></td>
+            <td>勒索軟體、疑似核心資料外傳、GxP／臨床系統受影響、重大供應商事故、可能觸發上市公司重大訊息揭露。</td>
+            <td>CEO／危機小組主導；CISO 擔任技術與風險總指揮；董事會／審計委員會即時知悉。</td>
+            <td>全集團營運持續、法規／個資／重訊法定義務判斷、外部鑑識背書、媒體與客戶統一聲明。</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Tab 3: Plan 180 Days -->
@@ -705,90 +818,398 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- 12-Month Implementation Roadmap -->
+      <div class="section-subtitle">
+        <span>📅</span>
+        <span>集團 Cyber Resilience 12 個月落地驗收路線圖 (12-Month Target Roadmap)</span>
+      </div>
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>落地時程</th>
+            <th>管理重點</th>
+            <th>可驗收成果 (Deliverables)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>0–30 天</strong><br><span class="tag-pill tag-rust">緊急止血</span></td>
+            <td>事件事實、司法證據保全、Crown Jewels 核心資產、外部曝險、帳號與不可變備份風險清查。</td>
+            <td>• 事件現況與鑑識報告<br>• 全集團資安風險熱圖<br>• 核心受管制系統清冊<br>• 緊急控制清單 (Immediate Fixes)</td>
+          </tr>
+          <tr>
+            <td><strong>31–90 天</strong><br><span class="tag-pill tag-amber">防禦加固</span></td>
+            <td>正式制度化資安治理委員會、IR Playbook、FIDO2 MFA/PAM、EDR 補齊、備份還原實戰驗證、董事會報告儀表板。</td>
+            <td>• 90 天深化改善計畫<br>• 跨職能 RACI 權責矩陣<br>• IR 應變與桌面兵導演練<br>• 董事會資安投資商業個案 (Business Case)</td>
+          </tr>
+          <tr>
+            <td><strong>3–6 個月</strong><br><span class="tag-pill tag-orange">深層整合</span></td>
+            <td>24x7 MDR/SOC 整合、集中化稽核日誌接入、弱點自動化生命週期治理、GxP 系統安全審查、TPRM 第三方風險制度。</td>
+            <td>• 外部 MDR/SOC 服務正式上線<br>• GxP/CSV 資安控制矩陣<br>• 關鍵供應商分級與審查程序<br>• ALCOA+ 資料完整性防護清冊</td>
+          </tr>
+          <tr>
+            <td><strong>6–12 個月</strong><br><span class="tag-pill tag-orange">全球免疫</span></td>
+            <td>海外子公司與泛泰全面納管、跨部門重大危機演練、ISO 27001:2022 持續改善閉環、企業級 AI Governance (ISO 42001)。</td>
+            <td>• 集團全球統一資安基線 (Baseline)<br>• BCP/DR 跨國災難復原演練報告<br>• ISO 稽核改善閉環驗證<br>• AI 使用與機敏資料治理政策</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Tab 4: Governance Charter -->
     <div id="miro-governance" class="tab-content">
       <h1 class="tab-headline">
         <span>🏛️</span>
-        <span>藥華醫藥 CIO / CTO / CISO 高階技術鐵三角組織權責章程</span>
+        <span>藥華醫藥 Cyber Resilience 組織架構、治理原則 ＆ CISO Operating Model</span>
       </h1>
       <p class="tab-lead">
-        遵循 Gartner 跨國企業治理標準，建立「第一道防線營運賦能 ＋ 研發創新交付 ＋ 獨立第二道防線數位主權」的三權分立架構。
+        藥華醫藥適合採取「<strong>董事會監督、CEO／總經理承擔、集團 CISO 統籌、IT 與品質單位共同落地</strong>」的生醫資安組織。重點不是複製群創的工廠 OT Security 模式，而是建立能保護研發 IP、臨床與病患資料、GxP 電腦化系統、藥品品質資料及全球供應鏈的 <strong>Cyber Resilience Governance Model</strong>。
       </p>
 
-      <div class="miro-grid-3">
-        <div class="miro-card">
-          <div class="miro-card-kicker">CIO 資訊長 (1st Line)</div>
-          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">營運賦能與多雲管理</h3>
-          <p style="font-size:12.5px; color:var(--text-charcoal);">
-            • 核心系統：SAP S/4HANA、LIMS、MES、全球 SD-WAN。<br>
-            • 核心目標：99.99% 高可用、FinOps 成本優化 -30%。
-          </p>
+      <!-- 2026 August Incident Callout -->
+      <div class="miro-callout">
+        <div class="miro-callout-header">
+          <span>🚨</span>
+          <span>治理升級背景：從「認證合規」邁向「常態韌性防禦」</span>
+          <a class="source-badge" href="https://www.ithome.com.tw/news/177838" target="_blank">🔗 iThome 報導：2026/08 藥華藥及泛泰醫療遭網攻</a>
         </div>
-        <div class="miro-card">
-          <div class="miro-card-kicker">CTO 技術長 (R&D Line)</div>
-          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">生醫研發與前瞻技術</h3>
-          <p style="font-size:12.5px; color:var(--text-charcoal);">
-            • 核心範疇：AI 藥物篩選、生物資訊運算、EDC 數據。<br>
-            • 核心目標：新藥研發效率 +50%、IND/NDA 數據 100% 準時。
-          </p>
-        </div>
-        <div class="miro-card">
-          <div class="miro-card-kicker">CISO 資安長 (2nd Line)</div>
-          <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:6px;">數位主權與韌性防禦</h3>
-          <p style="font-size:12.5px; color:var(--text-charcoal);">
-            • 核心範疇：NIST CSF 2.0、Besremi 專利防護、DFIR 應變。<br>
-            • 核心目標：專利 0 外洩、台中廠正常、FDA 21 CFR 11 合規。
-          </p>
-        </div>
+        <p style="font-size:13.5px; line-height:1.7;">
+          藥華藥已具備 ISO/IEC 27001:2022 管理基礎，且於 2026 年 8 月本公司及泛泰醫療部分資訊系統遭網攻並啟動應變、委外調查與重大訊息通報。這證明單純擁有 ISO 證書不足以防禦現代勒索與 APT 威脅。下一階段組織設計核心，是將既有的「認證合規」全面升級為「<strong>可偵測、可鑑識、可復原、可向董事會負責</strong>」的常態化實戰能力。
+        </p>
       </div>
 
+      <!-- 1. Suggested Architecture Tree -->
+      <div class="section-subtitle">
+        <span>🌳</span>
+        <span>建議組織架構體系 (Target Governance Hierarchy)</span>
+      </div>
+      <div class="tree-box">董事會／審計委員會
+  └─ 監督重大資安風險、資安投資、事件與改善閉環
+             ↑
+CEO／總經理
+  └─ 核定重大風險接受、跨部門資源與危機決策
+             ↑
+集團資安長 CISO／Head of Cyber Resilience
+  ├─ 資安治理委員會（Cybersecurity Steering Committee）
+  ├─ GRC、ISMS、Privacy 與第三方風險
+  ├─ Security Operations、Incident Response 與數位鑑識
+  ├─ Identity、Cloud、Endpoint 與資料保護
+  ├─ GxP Cybersecurity、CSV／CSA 與 Data Integrity
+  └─ BCP／DR 與危機管理
+             ↔
+CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
+法務／智財、HR、財務、內稽、海外子公司與重要委外夥伴</div>
+
+      <!-- 2. Governance Principles & Boundaries Table -->
+      <div class="section-subtitle">
+        <span>⚖️</span>
+        <span>治理原則與清晰權責邊界 (Governance Principles & Boundaries)</span>
+      </div>
       <table class="miro-table">
         <thead>
           <tr>
-            <th>職能角色</th>
-            <th>組織定位與匯報線</th>
-            <th>藥華醫藥專屬管轄系統</th>
-            <th>董事會考核核心量化 KPI</th>
+            <th style="width:20%;">核心角色</th>
+            <th style="width:40%;">應負責什麼 (Mandate & Accountabilities)</th>
+            <th style="width:40%;">不應混淆的權責 (Boundaries & Anti-Patterns)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>CIO (資訊長)</strong></td>
-            <td>第一道防線<br>直屬 CEO</td>
-            <td>集團 SAP S/4HANA、LIMS、MES、全球跨國 SD-WAN 骨幹、多雲基礎架構 (AWS/Azure/GCP)。</td>
-            <td>• Tier-0 系統可用度達 99.99% (零非計畫中斷)。<br>• 多雲架構 TCO 每年最佳化 -25% 至 -30%。<br>• IT 專案準時交付率 > 90%。</td>
+            <td><strong>董事會／審計委員會</strong></td>
+            <td>監督資安重大風險、資源配置、重大事件通報、法遵及改善成效；審視高風險例外與風險接受決策。</td>
+            <td>不介入日常技術工具選型與 SOC 告警處理。</td>
           </tr>
           <tr>
-            <td><strong>CTO (技術長)</strong></td>
-            <td>研發創新線<br>直屬 CEO</td>
-            <td>AI 輔助新藥分子篩選平台、生物資訊數據管線 (Bioinformatics Pipeline)、臨床 EDC/CDISC。</td>
-            <td>• 研發數據產出效率提升 +30% 至 +50%。<br>• 核心演算法專利申報準時率 100%。<br>• 核心運算管線效能翻倍。</td>
+            <td><strong>CEO／總經理</strong></td>
+            <td>承擔營運韌性與資安風險最終管理責任；核定跨部門資源調配、重大風險接受與危機戰時決策。</td>
+            <td>不取代 CISO 進行獨立的客觀風險評估。</td>
           </tr>
           <tr>
-            <td><strong>CISO (我/資安長)</strong></td>
-            <td>獨立第二道防線<br>直屬 CEO / 審計會</td>
-            <td>全集團 NIST CSF 2.0 韌性體系、Besremi 專利 CMK 加密、UEBA 行為 AI 監測、不可變備份 WORM。</td>
-            <td>• 核心研發專利 CMC 零外洩與台中廠 100% 穩定。<br>• EDR 覆蓋率 > 99.5% 且 MTTD < 15 分鐘。<br>• 100% 通過 FDA 21 CFR 11 與 ISO 27001 查核。</td>
+            <td><strong>集團 CISO<br>(我 / 候選人)</strong></td>
+            <td>建立企業資安戰略、風險治理、控制基線、事件應變指揮、董事會實質報告與跨國子公司協調。</td>
+            <td>不應單獨承擔所有 IT 服務可用性責任或代替業務單位核准風險接受。</td>
+          </tr>
+          <tr>
+            <td><strong>CIO／IT Head</strong></td>
+            <td>負責 IT 服務交付、企業應用、網路骨幹、雲端、端點、資料平台與 ITSM；嚴格依 CISO 安全基線落地改善。</td>
+            <td>不應自行核准重大資安例外，或把專案交付時程凌駕於資安風險門檻之上。</td>
+          </tr>
+          <tr>
+            <td><strong>QA／品質保證</strong></td>
+            <td>確保 GxP 受管制系統的 CSV/CSA 確效、變更控制、稽核軌跡（Audit Trail）、資料完整性與 CAPA 符合法規。</td>
+            <td>不應將受管制系統的資安控制只視為一般辦公室 IT 問題。</td>
+          </tr>
+          <tr>
+            <td><strong>法務／智財／隱私</strong></td>
+            <td>研判員工/受試者個資、營業秘密專利、商務合約條款、主管機關通報、跨境傳輸與法律爭議處理風險。</td>
+            <td>不應在尚未完成專業數位鑑識前，對外做出過度絕對的「無資料外洩」聲明。</td>
+          </tr>
+          <tr>
+            <td><strong>內稽</strong></td>
+            <td>獨立驗證全集團資安控制措施的有效性、稽核缺失改善進度及風險例外核准流程。</td>
+            <td>不承擔資安控制措施的日常技術執行責任。</td>
           </tr>
         </tbody>
       </table>
 
+      <!-- 3. CISO Direct Headcount & Operating Model -->
+      <div class="section-subtitle">
+        <span>👥</span>
+        <span>CISO 直屬編制與目標 Operating Model (9–14 人核心團隊 + MSSP/MDR)</span>
+      </div>
+      <p style="font-size:13.5px; color:var(--text-charcoal); margin-bottom:12px; font-weight:600;">
+        藥華不一定需要一開始建立大型內部 SOC；較務實的做法是採取「<strong>小型高階核心團隊 ＋ MSSP/MDR ＋ 鑑識與法規專家彈性支援</strong>」，先將組織與治理關鍵能力握在內部，再將 24×7 監控等可標準化工作外包管理。
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>功能單位</th>
+            <th>建議初期內部編制</th>
+            <th>核心職責</th>
+            <th>可委外管理項目 (Outsourcing)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CISO Office<br>資安策略辦公室</strong></td>
+            <td>1–2 人</td>
+            <td>年度資安戰略規劃、預算編列、董事會/審計會材料、跨部門協調、重大風險升級與資安 KPI/KRI 考核追蹤。</td>
+            <td>外部顧問成熟度評估、專案 PMO 支援。</td>
+          </tr>
+          <tr>
+            <td><strong>GRC／ISMS／Privacy</strong></td>
+            <td>2–3 人</td>
+            <td>ISO 27001 維運、資訊資產風險評估、SoA 適用性聲明、內外部稽核、政策制修訂、資安意識培訓、個資法規與第三方風險。</td>
+            <td>ISO 認證顧問、滲透測試（PenTest）、稽核協作服務。</td>
+          </tr>
+          <tr>
+            <td><strong>SecOps／IR／Digital Forensics</strong></td>
+            <td>2–3 人</td>
+            <td>安全事件分級分類、SOC 營運管理、EDR/XDR 策略優化、SIEM use case 開發、主動威脅獵捕、鑑識協調與演練主導。</td>
+            <td>24×7 MDR/SOC 監控、外部 DFIR 鑑識隊、外部紅隊演練。</td>
+          </tr>
+          <tr>
+            <td><strong>Security Engineering</strong></td>
+            <td>2–3 人</td>
+            <td>IAM 身分管理、FIDO2 MFA、PAM 特權控管、端點安全、郵件安全、網路微隔離、多雲架構安全、弱點掃描與曝險管理。</td>
+            <td>MSSP 運維、代操弱點掃描、SASE / WAF 平台維運。</td>
+          </tr>
+          <tr>
+            <td><strong>GxP Security／CSV-CSA Liaison</strong></td>
+            <td>1–2 人</td>
+            <td>GxP 受管制系統風險分級、與 QA 共同建立 CSV/CSA 資安審查機制、Audit Trail 稽核軌跡監控與 ALCOA+ 資料完整性控制。</td>
+            <td>CSV 確效專家顧問、實驗室電腦化系統驗證協作。</td>
+          </tr>
+          <tr>
+            <td><strong>BCP／DR／Crisis Management</strong></td>
+            <td>1 人 (或由 GRC 兼任)</td>
+            <td>業務衝擊分析（BIA）、RTO/RPO 標竿設定、不可變備份 WORM 驗證、災難復原演練、危機通報程序與跨部門桌上演練引導。</td>
+            <td>DR 架構顧問、跨國演練外部獨立引導師。</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--accent-orange);">核心內部規模</strong></td>
+            <td><strong style="color:var(--accent-orange);">約 9–14 人</strong></td>
+            <td><strong>足以在集團內部形成企業級治理與技術控制的核心能力</strong></td>
+            <td><strong>依公司規模與新適應症拓展逐年滾動調整</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="miro-callout" style="background:#FFFDF8; border-color:var(--accent-amber);">
+        <div class="miro-callout-header" style="color:var(--accent-amber);">
+          <span>💡</span>
+          <span>實務漸進推動原則 (Pragmatic Transition Strategy)</span>
+        </div>
+        <p style="font-size:13px; line-height:1.65; color:var(--text-charcoal);">
+          這是藥華醫藥的「<strong>目標 operating model</strong>」，而非要求瞬間擴編。藥華已具備既有資安與資訊同仁，我上任後的實務方針是<strong>「先全面盤點現有人才專長與工作邊界，再決定職能補強、內部轉任或委外 MDR 比例」</strong>；絕不於上任初期盲目重組，確保既有團隊安定與營運延續。
+        </p>
+      </div>
+
+      <!-- 4. Six BioPharma Functional Pillars -->
+      <div class="section-subtitle">
+        <span>🧬</span>
+        <span>生醫製藥情境六大核心職能與具體工作 (6 Functional Pillars)</span>
+      </div>
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th>職能領域</th>
+            <th>核心責任</th>
+            <th>生醫製藥情境之具體工作</th>
+            <th>主要交付產出</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. GRC／ISMS／法遵</strong></td>
+            <td>建立制度、風險管理、稽核與董事會治理。</td>
+            <td>持續維運 ISO 27001:2022；建立全集團資訊資產清冊、動態風險登錄簿、資安政策、例外核准流程、員工社交工程釣魚演練與內外稽核閉環。</td>
+            <td>ISMS 體系文件、SoA 適用性聲明、風險登錄簿、年度資安總計畫、董事會 KRI 季度報告。</td>
+          </tr>
+          <tr>
+            <td><strong>2. 事件應變與鑑識</strong></td>
+            <td>迅速控制攻擊、保全證據、判斷外洩與完成復原。</td>
+            <td>建立勒索軟體（Ransomware）、特權遭竊、BEC 詐騙、機敏資料外傳、供應商入侵等專屬 Playbook；完整保全 EDR、AD、Email、VPN、Firewall、SaaS Audit Log 鑑識證據。</td>
+            <td>IR Incident Playbook、Chain of Custody 監管鏈、司法級鑑識報告、Lessons Learned 與 CAPA 結案報告。</td>
+          </tr>
+          <tr>
+            <td><strong>3. IAM 與資料保護</strong></td>
+            <td>保護身分、特權憑證、機敏資料與關鍵帳號。</td>
+            <td>導入抗釣魚 FIDO2 MFA、PAM 特權金鑰保管、Joiner-Mover-Leaver 帳號生命週期、定期權限覆核、機敏資料四級分類、靜態/傳輸加密、DLP 外洩防護與存取審計。</td>
+            <td>IAM/PAM 控制基線、最小特權矩陣、資料分類與標籤標準、DLP 攔阻例外審核流程。</td>
+          </tr>
+          <tr>
+            <td><strong>4. 偵測、防護與弱點管理</strong></td>
+            <td>提升可見性、縮短偵測與處置時間（MTTD/MTTR）。</td>
+            <td>部署全域 EDR/XDR、SIEM 日誌關聯分析、MDR/SOC 24x7 聯防、進階電子郵件防護、外部攻擊面（EASM）監控、漏洞優先等級排序、修補 SLA 執行與紅隊實戰演練。</td>
+            <td>SOC SLA 運維週報、MTTD/MTTR 即時看板、漏洞修補週期報告、紅藍攻防演練檢討記錄。</td>
+          </tr>
+          <tr>
+            <td><strong>5. GxP／CSV-CSA／Data Integrity</strong></td>
+            <td>將資安控制深度嵌入受管制系統與藥品品質流程。</td>
+            <td>針對 LIMS、QMS、DMS、ERP、臨床試驗資料、藥物安全資料與實驗室電腦化系統實施資安風險分級；強化 Audit Trail 防竄改、電子簽章、變更控制、不可變備份與驗證還原。</td>
+            <td>GxP 資安風險評估報告、受管制系統安全規格書、CSV/CSA 證據包、ALCOA+ 資料完整性控制矩陣。</td>
+          </tr>
+          <tr>
+            <td><strong>6. 第三方與營運韌性</strong></td>
+            <td>管理 CRO、CDMO、CMO、雲端與供應商風險，確保持續營運。</td>
+            <td>在商業合約中增訂資安標準條款、第三方供應商風險分級、安全遠端維運存取通道、即時事件通報協議、供應商實地稽核；執行 BIA 衝擊分析、不可變備份 WORM 與年度復原實兵演練。</td>
+            <td>TPRM 第三方管理制度、供應商資安風險清冊、BIA 報告、BCP/DR 災難復原手冊、RTO/RPO 演練驗證。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 5. Cross-Functional Steering Committee -->
+      <div class="section-subtitle">
+        <span>🌐</span>
+        <span>跨部門資安治理委員會 (Cybersecurity Steering Committee)</span>
+      </div>
+      <p style="font-size:13.5px; color:var(--text-charcoal); margin-bottom:12px; font-weight:600;">
+        資安治理委員會明確制度化，由 <strong>CISO 擔任執行召集人、CEO／總經理擔任最高管理階層 Sponsor</strong>。這不是單純開會，而是集團落實<strong>「風險取捨與跨部門資源重大決策」</strong>的核心治理機構。
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th style="width:25%;">委員會成員</th>
+            <th style="width:75%;">在委員會的實質治理責任</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CEO／總經理</strong></td>
+            <td>委員會 Sponsor。核定全集團重大資安戰略、年度預算資源與高風險接受（Risk Acceptance）；協調跨事業單位權責衝突。</td>
+          </tr>
+          <tr>
+            <td><strong>CISO (我 / 候選人)</strong></td>
+            <td>執行召集人。定期向委員會呈報全域風險熱圖、事件態勢、控制措施成熟度、預算投入效益與改善專案；主導決議之追蹤落地。</td>
+          </tr>
+          <tr>
+            <td><strong>CIO／資訊主管</strong></td>
+            <td>報告全集團 IT 核心系統、雲端多雲架構、跨國網路、端點設備、備份狀況與各項安全改善工程進度。</td>
+          </tr>
+          <tr>
+            <td><strong>QA／品質主管</strong></td>
+            <td>確認資安措施對 GxP 藥品生產、CSV/CSA 確效、Data Integrity、CAPA 缺失改善與品質保證系統之衝擊與合規性。</td>
+          </tr>
+          <tr>
+            <td><strong>RA／法規主管</strong></td>
+            <td>確認全球衛生主管機關（FDA、EMA、PMDA、TFDA）對產品申報、臨床試驗與電子記錄之最新資安合規指引與應對方針。</td>
+          </tr>
+          <tr>
+            <td><strong>法務／智財主管</strong></td>
+            <td>檢視員工/受試者個資保護、營業秘密專利保全、供應商契約資安責任、司法訴訟保全與對外公開聲明稿。</td>
+          </tr>
+          <tr>
+            <td><strong>研發與臨床主管</strong></td>
+            <td>指定生醫核心研發機密（Crown Jewels）、研發/臨床實驗資料四級分類標準、界定業務可接受的風險邊界。</td>
+          </tr>
+          <tr>
+            <td><strong>製造／供應鏈主管</strong></td>
+            <td>確認台中蛋白質製造廠、藥品物流、CDMO/CMO 委託代工與第三方供應鏈環節之系統依賴性與營運中斷風險。</td>
+          </tr>
+          <tr>
+            <td><strong>HR 人資長</strong></td>
+            <td>管理關鍵職位人員任免異動、全體同仁資安教育考核、防範內部威脅（Insider Threat）、離職交接與權限即時收回。</td>
+          </tr>
+          <tr>
+            <td><strong>內稽主管</strong></td>
+            <td>以獨立客觀之第三道防線立場，列席檢視委員會各項資安控制的有效性與重大決議事項之落實進度。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 6. Board-Level Quantitative KPIs -->
+      <div class="section-subtitle">
+        <span>🎯</span>
+        <span>CISO 董事會年度量化考核 KPI ＆ KRI 矩陣</span>
+      </div>
+      <p style="font-size:13.5px; color:var(--text-charcoal); margin-bottom:12px; font-weight:600;">
+        CISO 的 KPI 絕不應只衡量「有沒有發生資安事件」；成熟的董事會衡量標準是<strong>「確認組織在假設已遭入侵（Assume Breach）的前提下，能否極速發現、精準遏止、無損復原並留下完整法規稽核證據」</strong>：
+      </p>
+
+      <table class="miro-table">
+        <thead>
+          <tr>
+            <th style="width:25%;">考核類別</th>
+            <th style="width:75%;">董事會核定 KPI ／ KRI 量化指標標準</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>資產與身分安全<br>(Asset & IAM)</strong></td>
+            <td>• 100% Crown Jewels 核心王冠資產完成 Owner 指定、資料分類與動態風險分級。<br>• 關鍵系統與全體遠端存取之抗釣魚 MFA 覆蓋率達 <strong>100%</strong>。<br>• 特權帳號（Domain Admin/Cloud Root）每季度定期覆核率達 <strong>100%</strong>。</td>
+          </tr>
+          <tr>
+            <td><strong>威脅偵測與應變<br>(Detect & Respond)</strong></td>
+            <td>• 關鍵受管制系統安全稽核日誌集中接入 SIEM 比率達 <strong>95% 以上</strong>。<br>• 重大資安事件平均偵測時間（MTTD < 15分鐘）與圍堵時間（MTTR < 60分鐘）逐年持續優化下降。<br>• 每年至少主導完成 <strong>2 次</strong> 跨部門高階危機兵棋演練。</td>
+          </tr>
+          <tr>
+            <td><strong>營運韌性與復原<br>(Resilience & DR)</strong></td>
+            <td>• Tier-1 核心營運與製造系統備份實體還原演練成功率達 <strong>100%</strong>。<br>• 災難復原時間與資料點目標（RTO < 4h / RPO < 15m）達標率 <strong>95% 以上</strong>。<br>• 關鍵核心備份 100% 具備不可變（WORM / Object Lock）或實體離線隔離保護。</td>
+          </tr>
+          <tr>
+            <td><strong>GxP 與資料完整性<br>(GxP & Integrity)</strong></td>
+            <td>• 集團高風險 GxP 電腦化系統完成專業資安風險評估率達 <strong>100%</strong>。<br>• Audit Trail 稽核軌跡與電子簽章控制缺失之 CAPA 改善措施準時結案率達 <strong>95% 以上</strong>。</td>
+          </tr>
+          <tr>
+            <td><strong>漏洞修補與供應鏈<br>(Vulnerability & TPRM)</strong></td>
+            <td>• 核心系統 Critical / High 弱點在定義 SLA 期限內完成修補率達 <strong>95% 以上</strong>。<br>• 高風險第三方廠商（CRO/CDMO/雲端）年度資安審查覆蓋率達 <strong>100%</strong>。<br>• 關鍵業務外包合約納入標準資安責任與即時通報條款納入率達 <strong>100%</strong>。</td>
+          </tr>
+          <tr>
+            <td><strong>組織治理與合規<br>(Governance & Audit)</strong></td>
+            <td>• 董事會與審計委員會定期資安戰情報告按期提交率達 <strong>100%</strong>。<br>• 所有高風險資安例外（Exceptions）均具明確 Risk Owner、有效到期日與 CEO 正式核准紀錄。<br>• 國內外主管機關及內外部稽核之重大資安缺失維持 <strong>零逾期未改善</strong>。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 7. Gartner Triangle Coordination Scenarios -->
       <div class="miro-callout">
         <div class="miro-callout-header">
           <span>⚡</span>
-          <span>藥華醫藥生醫場景：跨職能協同與制衡機制 (Gartner Blueprint)</span>
+          <span>生醫製藥場景：CIO / CTO / CISO 跨職能協同與制衡實務 (Gartner Blueprint)</span>
         </div>
         <ul>
-          <li><strong>ERP / LIMS 系統升級：</strong>CIO 團隊主導架構與建置；CISO (我) 執行 DevSecOps 弱點掃描；QA/CSV 專員執行 21 CFR Part 11 Audit Trail 確效，三方聯合簽核放行。</li>
-          <li><strong>AI 輔助新藥研發防洩密：</strong>CTO 開發 AI 篩選模型；CIO 調撥 GPU 運算資源；CISO (我) 導入 ISO 42001 (AISDLC) 與 UEBA 監控，杜絕研發專利分子式外流。</li>
-          <li><strong>台中蛋白質製造廠產線維護：</strong>CIO 維運底層工廠網路；CISO (我) 嚴格落實 Purdue Model 實體隔離 (Air-gap)；廠長與 QA 共同簽核任何外部連線變更。</li>
-          <li><strong>重大資安事件戰時復原：</strong>CISO (我) 擔任 Incident Commander 執行受控隔離；CIO 調撥 Clean Room 還原備份；QA/CSV 與 CISO 共同簽字放行復線。</li>
+          <li><strong>ERP / LIMS 系統升級：</strong>CIO 團隊主導架構與建置；CISO 執行 DevSecOps 弱點掃描；QA/CSV 專員執行 21 CFR Part 11 Audit Trail 確效，三方聯合簽核放行。</li>
+          <li><strong>AI 輔助新藥研發防洩密：</strong>CTO 開發 AI 篩選模型；CIO 調撥 GPU 運算資源；CISO 導入 ISO 42001 (AISDLC) 與 UEBA 監控，杜絕研發專利分子式外流。</li>
+          <li><strong>台中蛋白質製造廠產線維護：</strong>CIO 維運底層工廠網路；CISO 嚴格落實 Purdue Model 實體隔離 (Air-gap)；廠長與 QA 共同簽核任何外部連線變更。</li>
+          <li><strong>重大資安事件戰時復原：</strong>CISO 擔任 Incident Commander 執行受控隔離；CIO 調撥 Clean Room 還原備份；QA/CSV 與 CISO 共同簽字放行復線。</li>
         </ul>
       </div>
-    </div>
 
+      <!-- 8. Final Position Quote -->
+      <div class="miro-quote">
+        <div style="font-size:12px; font-family:var(--font-mono); color:var(--accent-orange); text-transform:uppercase; margin-bottom:6px; font-weight:800;">
+          ✦ THE CYBER RESILIENCE LEADER ｜ 藥華醫藥資安組織最終戰略定位
+        </div>
+        藥華醫藥的資安組織應被定位為：<strong>「保護研發與臨床價值、確保 GxP 與資料完整性、維持全球營運與供應韌性、並讓董事會能做出可追溯風險決策的企業治理功能。」</strong><br>
+        <span style="font-size:13px; color:var(--text-muted); font-weight:600;">
+          這會使 CISO 不只是管理防火牆、SOC 或 ISO 證書的人，而是串接董事會、CEO、CIO、QA、法務、臨床、研發、製造與全球夥伴的 Cyber Resilience Leader。
+        </span>
+      </div>
+    </div>
     <!-- Tab 5: Gartner CIO Paradigm -->
     <div id="miro-gartner_cio" class="tab-content">
       <h1 class="tab-headline">
@@ -1207,7 +1628,7 @@
     'overview': '總裁戰情儀表板 (Executive Overview)',
     'threat': '威脅與暗網鑑識 (Threat Deconstruction)',
     'plan180': 'CISO 180天就任戰略計劃書 (Strategic Roadmap)',
-    'governance': 'CIO/CTO/CISO 組織權責章程 (Governance Charter)',
+    'governance': '組織架構、治理原則 ＆ CISO Operating Model',
     'gartner_cio': 'Gartner 現代 CIO 轉型 (CIO Paradigm)',
     'ueba': 'UEBA 行為監測平台 (AI Behavioral ITDR)',
     'audit': '內部全域資產盤點 SOP (Asset Audit)',
