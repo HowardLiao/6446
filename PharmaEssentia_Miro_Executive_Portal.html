@@ -6,7 +6,7 @@
   <meta name="googlebot" content="noindex, nofollow, noarchive">
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>藥華醫藥（6446）全球資安治理與戰時應變總裁戰情專區 ｜ 廖倫豪 博士</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@600;700&display=swap');
@@ -521,13 +521,399 @@
     color: var(--accent-orange);
     margin-bottom: 12px;
   }
+
+  /* =========================================================
+     MOBILE-FIRST RESPONSIVE & HUMAN-CENTERED TOUCH UX
+     ========================================================= */
+
+  /* Mobile Top App Bar (Hidden on desktop) */
+  #mobile-topbar {
+    display: none;
+    height: 56px;
+    background: #FFFFFF;
+    border-bottom: 1.5px solid var(--border-orange);
+    padding: 0 16px;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    box-shadow: 0 2px 10px rgba(232, 89, 12, 0.06);
+  }
+
+  .mobile-menu-btn {
+    background: #FFF4E6;
+    border: 1.5px solid var(--accent-orange);
+    color: var(--accent-orange);
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .mobile-brand-title {
+    font-size: 14.5px;
+    font-weight: 900;
+    color: var(--accent-orange);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mobile-brand-title span.badge {
+    background: var(--accent-orange);
+    color: #fff;
+    font-size: 9px;
+    font-family: var(--font-mono);
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  .mobile-status-dot {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #10B981;
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+
+  /* Mobile Horizontal Pill Navigation Bar (Sticky under Topbar) */
+  #mobile-pill-nav {
+    display: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    background: #FFFDFB;
+    border-bottom: 1.5px solid var(--border-orange);
+    padding: 8px 12px;
+    gap: 8px;
+    scrollbar-width: none;
+    position: sticky;
+    top: 56px;
+    z-index: 890;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  }
+  #mobile-pill-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pill-nav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-orange);
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text-charcoal);
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .pill-nav-item:active {
+    transform: scale(0.96);
+  }
+
+  .pill-nav-item.active {
+    background: var(--accent-orange);
+    color: #FFFFFF;
+    border-color: var(--accent-orange);
+    box-shadow: 0 3px 10px rgba(232, 89, 12, 0.25);
+  }
+
+  /* Sidebar Backdrop Overlay for Mobile */
+  #sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  #sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .sidebar-close-btn {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #FFF4E6;
+    border: 1.5px solid var(--accent-orange);
+    color: var(--accent-orange);
+    font-size: 15px;
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* Table Horizontal Scroll Hint */
+  .table-scroll-hint {
+    display: none;
+    font-size: 11px;
+    color: var(--accent-amber);
+    font-weight: 700;
+    margin: 8px 0 4px 0;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* =========================================================
+     RESPONSIVE BREAKPOINTS: <= 900px (Mobile & Tablets)
+     ========================================================= */
+  @media screen and (max-width: 900px) {
+    body {
+      flex-direction: column !important;
+      height: auto !important;
+      min-height: 100vh !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+    }
+
+    #mobile-topbar {
+      display: flex !important;
+    }
+
+    #mobile-pill-nav {
+      display: flex !important;
+    }
+
+    /* Sidebar transforms into Drawer */
+    #sidebar {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 82% !important;
+      max-width: 320px !important;
+      height: 100vh !important;
+      z-index: 999 !important;
+      transform: translateX(-100%) !important;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      box-shadow: 8px 0 30px rgba(0, 0, 0, 0.2) !important;
+      background: #FFFFFF !important;
+    }
+
+    #sidebar.drawer-open {
+      transform: translateX(0) !important;
+    }
+
+    .sidebar-close-btn {
+      display: flex !important;
+    }
+
+    /* Desktop Top Banner Adjusted */
+    #main-workspace {
+      width: 100% !important;
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    .top-banner {
+      display: none !important; /* Replaced by mobile topbar & pill nav */
+    }
+
+    .scroll-container {
+      padding: 16px 14px 40px 14px !important;
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    /* Typography Scaled for Mobile */
+    h1.tab-headline {
+      font-size: 18.5px !important;
+      line-height: 1.35 !important;
+      margin-bottom: 8px !important;
+      flex-wrap: wrap !important;
+    }
+
+    p.tab-lead {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .section-subtitle {
+      font-size: 15px !important;
+      margin: 22px 0 10px 0 !important;
+      flex-wrap: wrap !important;
+    }
+
+    /* Grids Auto Collapsing */
+    .miro-grid-4 {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 10px !important;
+      margin-bottom: 16px !important;
+    }
+
+    .miro-grid-3, .miro-grid-2 {
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
+      margin-bottom: 16px !important;
+    }
+
+    .miro-card {
+      padding: 14px !important;
+      border-radius: 14px !important;
+    }
+
+    .miro-card-metric {
+      font-size: 21px !important;
+    }
+
+    .miro-card-desc {
+      font-size: 11.5px !important;
+    }
+
+    /* Callouts & Quotes */
+    .miro-callout {
+      padding: 14px 16px !important;
+      margin-bottom: 18px !important;
+      border-radius: 14px !important;
+    }
+
+    .miro-callout ul, .miro-callout ol {
+      padding-left: 18px !important;
+      font-size: 12.5px !important;
+    }
+
+    .miro-quote {
+      padding: 14px 16px !important;
+      font-size: 13px !important;
+      margin: 16px 0 !important;
+    }
+
+    /* Tables with Horizontal Scroll */
+    .table-scroll-hint {
+      display: flex !important;
+    }
+
+    table.miro-table {
+      display: block !important;
+      width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      font-size: 12px !important;
+      margin: 8px 0 18px 0 !important;
+      border-radius: 10px !important;
+    }
+
+    table.miro-table th, table.miro-table td {
+      padding: 10px 12px !important;
+      min-width: 110px !important;
+    }
+
+    /* Tree box */
+    .tree-box {
+      font-size: 11px !important;
+      padding: 12px 14px !important;
+      margin: 12px 0 18px 0 !important;
+    }
+
+    /* Download Cards Stacked for Thumb Tap */
+    .download-card {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 12px !important;
+      padding: 16px !important;
+      margin-bottom: 12px !important;
+    }
+
+    .dl-left h4 {
+      font-size: 14px !important;
+      line-height: 1.4 !important;
+    }
+
+    .dl-left p {
+      font-size: 11.5px !important;
+    }
+
+    .dl-action-btn {
+      width: 100% !important;
+      text-align: center !important;
+      justify-content: center !important;
+      min-height: 44px !important;
+      font-size: 13.5px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Sign-off Container */
+    .sign-container {
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
+      margin-top: 24px !important;
+      padding-top: 16px !important;
+    }
+
+    .sign-box {
+      padding: 14px !important;
+    }
+  }
+
 </style>
 </head>
 <body>
 
+<!-- Mobile Overlay Backdrop -->
+<div id="sidebar-overlay" onclick="toggleMobileMenu(false)"></div>
+
+<!-- Mobile Topbar Header -->
+<header id="mobile-topbar">
+  <button class="mobile-menu-btn" onclick="toggleMobileMenu(true)" aria-label="切換選單">
+    ☰
+  </button>
+  <div class="mobile-brand-title">
+    <span>藥華醫藥 6446</span>
+    <span class="badge">CISO</span>
+  </div>
+  <div class="mobile-status-dot">
+    <span>● 正常</span>
+  </div>
+</header>
+
+<!-- Mobile Horizontal Swipeable Pill Navigation -->
+<nav id="mobile-pill-nav">
+  <button class="pill-nav-item active" data-tab="overview" onclick="showMiroTab('overview')">🎨 總裁戰情</button>
+  <button class="pill-nav-item" data-tab="threat" onclick="showMiroTab('threat')">🔍 威脅鑑識</button>
+  <button class="pill-nav-item" data-tab="plan180" onclick="showMiroTab('plan180')">🛡️ 180天戰略</button>
+  <button class="pill-nav-item" data-tab="governance" onclick="showMiroTab('governance')">🏛️ 組織架構</button>
+  <button class="pill-nav-item" data-tab="gartner_cio" onclick="showMiroTab('gartner_cio')">📈 現代CIO</button>
+  <button class="pill-nav-item" data-tab="ueba" onclick="showMiroTab('ueba')">🤖 UEBA平台</button>
+  <button class="pill-nav-item" data-tab="audit" onclick="showMiroTab('audit')">📋 資產盤點</button>
+  <button class="pill-nav-item" data-tab="dfir" onclick="showMiroTab('dfir')">⚡ DFIR進駐</button>
+  <button class="pill-nav-item" data-tab="routine" onclick="showMiroTab('routine')">📅 預防體系</button>
+  <button class="pill-nav-item" data-tab="downloads" onclick="showMiroTab('downloads')">📁 下載中心</button>
+</nav>
+
+
 <!-- Left Miró Sidebar -->
 <div id="sidebar">
   <div class="sidebar-header">
+    <button class="sidebar-close-btn" onclick="toggleMobileMenu(false)">✕</button>
     <div class="brand-badge">
       <span>● ▲ ★</span>
       <span>PHARMAESSENTIA 6446</span>
@@ -688,6 +1074,7 @@
         結合開源情報（OSINT/CTI）、暗網洩密追蹤與 MITRE ATT&CK 攻擊鏈，精準剖析事件原由與影響範疇。
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -740,6 +1127,7 @@
         藥華的事件治理應避免僅由資訊部門處理；特別是涉及研發 IP、臨床資料、病患／員工個資、GxP 系統或上市公司揭露時，必須分層升級。2026 年 8 月事件已顯示這種三級架構的必要性：公司初期先對外說明「正盤點、初步評估」，但最終對資料外洩、GxP 完整性與實際業務影響的判斷，必須以<strong>鑑識證據而不是早期假設</strong>為基礎。
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -782,6 +1170,7 @@
         以 NIST CSF 2.0 六大功能為骨幹，落實董事會風險胃納、三道防線獨立性與 GxP 生醫品質確效。
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -824,6 +1213,7 @@
         <span>📅</span>
         <span>集團 Cyber Resilience 12 個月落地驗收路線圖 (12-Month Target Roadmap)</span>
       </div>
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -906,6 +1296,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         <span>⚖️</span>
         <span>治理原則與清晰權責邊界 (Governance Principles & Boundaries)</span>
       </div>
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -962,6 +1353,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         藥華不一定需要一開始建立大型內部 SOC；較務實的做法是採取「<strong>小型高階核心團隊 ＋ MSSP/MDR ＋ 鑑識與法規專家彈性支援</strong>」，先將組織與治理關鍵能力握在內部，再將 24×7 監控等可標準化工作外包管理。
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -1032,6 +1424,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         <span>🧬</span>
         <span>生醫製藥情境六大核心職能與具體工作 (6 Functional Pillars)</span>
       </div>
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -1090,6 +1483,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         資安治理委員會明確制度化，由 <strong>CISO 擔任執行召集人、CEO／總經理擔任最高管理階層 Sponsor</strong>。這不是單純開會，而是集團落實<strong>「風險取捨與跨部門資源重大決策」</strong>的核心治理機構。
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -1150,6 +1544,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         CISO 的 KPI 絕不應只衡量「有沒有發生資安事件」；成熟的董事會衡量標準是<strong>「確認組織在假設已遭入侵（Assume Breach）的前提下，能否極速發現、精準遏止、無損復原並留下完整法規稽核證據」</strong>：
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -1244,6 +1639,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         </div>
       </div>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -1327,6 +1723,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         我親自指揮資安專責團隊完成全集團六大維度技術盤點，並由四大技術主管落實標準處置指令。
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -1375,6 +1772,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         由外部法務正式委任第三方專業鑑識團隊，確保享有律師保密特權（Attorney-Client Privilege）與司法證據鏈。
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -1442,6 +1840,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
         我為藥華醫藥建立長態免疫機制，確保任何微小異常在第一時間被捕捉並消滅。
       </p>
 
+      <div class="table-scroll-hint"><span>👉 左右滑動檢視完整數據 (Swipe table)</span></div>
       <table class="miro-table">
         <thead>
           <tr>
@@ -1645,15 +2044,54 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
     'downloads': '正式報告下載中心 (Download Center - 11 份全)'
   };
 
-  function showMiroTab(tabId) {
-    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+  function toggleMobileMenu(open) {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    if (open) {
+      sidebar.classList.add('drawer-open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    } else {
+      sidebar.classList.remove('drawer-open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
 
+  function showMiroTab(tabId) {
+    // 1. Update Sidebar Nav Items
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    const sidebarMatch = document.querySelector(`.nav-item[onclick*="'${tabId}'"]`);
+    if (sidebarMatch) sidebarMatch.classList.add('active');
+
+    // 2. Update Mobile Pills
+    document.querySelectorAll('.pill-nav-item').forEach(el => {
+      if (el.getAttribute('data-tab') === tabId) {
+        el.classList.add('active');
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      } else {
+        el.classList.remove('active');
+      }
+    });
+
+    // 3. Switch Tab Content
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     const target = document.getElementById('miro-' + tabId);
-    if (target) target.classList.add('active');
+    if (target) {
+      target.classList.add('active');
+      // Scroll to top of workspace smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const scrollContainer = document.querySelector('.scroll-container');
+      if (scrollContainer) scrollContainer.scrollTop = 0;
+    }
 
-    document.getElementById('active-tab-name').textContent = miroTitles[tabId] || '戰情專區';
+    // 4. Update Header Title
+    const activeTitle = miroTitles[tabId] || '戰情專區';
+    const activeTabElem = document.getElementById('active-tab-name');
+    if (activeTabElem) activeTabElem.textContent = activeTitle;
+
+    // 5. Close Mobile Menu Drawer if open
+    toggleMobileMenu(false);
   }
 </script>
 </body>
