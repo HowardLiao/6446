@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>藥華醫藥 6446 戰情專區 ｜ 手機端真機即時預覽</title>
+<style>
+  :root {
+    --primary: #E8590C;
+    --amber: #D97706;
+    --bg-dark: #1E293B;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--foreground, #232629);
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 12px;
+    padding: 8px 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #FFD8A8;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(232, 89, 12, 0.06);
+  }
+
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  .device-switchers {
+    display: flex;
+    gap: 6px;
+  }
+
+  .dev-btn {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #FFD8A8;
+    background: #FFF4E6;
+    color: var(--primary);
+    transition: all 0.15s ease;
+  }
+  .dev-btn.active {
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+  }
+
+  /* Phone Mockup Frame */
+  .phone-frame {
+    width: 390px;
+    height: 740px;
+    background: #000000;
+    border-radius: 46px;
+    padding: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25), 0 0 0 4px #475569;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Dynamic Island Notch */
+  .notch {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 24px;
+    background: #000000;
+    border-radius: 20px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12px;
+  }
+  .notch-camera {
+    width: 10px;
+    height: 10px;
+    background: #1E293B;
+    border-radius: 50%;
+  }
+
+  /* Screen Container */
+  .screen {
+    flex: 1;
+    background: #FAFAF8;
+    border-radius: 36px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  /* Home Indicator Bar */
+  .home-bar {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 4.5px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    z-index: 100;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-toolbar">
+  <div class="toolbar-left">
+    <span>📱</span>
+    <span>藥華醫藥 6446 手機端親和性即時操作</span>
+  </div>
+  <div class="device-switchers">
+    <button class="dev-btn active" onclick="setDevice(390, 740, this)">iPhone 16</button>
+    <button class="dev-btn" onclick="setDevice(430, 780, this)">Max 寬屏</button>
+  </div>
+</div>
+
+<div class="phone-frame" id="phone-box">
+  <div class="notch"><div class="notch-camera"></div></div>
+  <div class="screen">
+    <iframe src="index.html" id="target-iframe" title="藥華醫藥戰情專區"></iframe>
+  </div>
+  <div class="home-bar"></div>
+</div>
+
+<script>
+  function setDevice(width, height, btn) {
+    document.querySelectorAll('.dev-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const box = document.getElementById('phone-box');
+    box.style.width = width + 'px';
+    box.style.height = height + 'px';
+  }
+</script>
+
+</body>
+</html>
