@@ -1030,6 +1030,57 @@
     }
   }
 
+
+  /* Interactive Clickable Cards */
+  .interactive-card {
+    cursor: pointer !important;
+    touch-action: manipulation;
+    position: relative;
+    user-select: none;
+  }
+  .interactive-card:active {
+    transform: scale(0.97) !important;
+    border-color: var(--color-primary) !important;
+    background: #FFF4E6 !important;
+  }
+
+  button.nav-item {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    margin-bottom: 5px;
+    border-radius: var(--radius-md);
+    min-height: 48px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  button.nav-item:active {
+    background: #FFF4E6;
+  }
+  button.nav-item.active {
+    background: #FFE8D6;
+    color: var(--color-primary);
+    border: 1.5px solid var(--color-primary);
+    box-shadow: 0 3px 10px rgba(232, 89, 12, 0.12);
+  }
+
+  /* Make sure overlay never intercepts when not active */
+  #sidebar-overlay {
+    pointer-events: none;
+  }
+  #sidebar-overlay.active {
+    pointer-events: auto;
+  }
+
 </style>
 </head>
 <body>
@@ -1082,46 +1133,46 @@
   </div>
 
   <ul class="nav-list">
-    <li class="nav-item active" onclick="showMiroTab('overview')">
+    <button type="button" class="nav-item active" data-tab="overview" onclick="showMiroTab(\'overview\')" role="tab" aria-selected="false">
       <span>🎨 總裁戰情儀表板</span>
       <span class="nav-tag">OVERVIEW</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('threat')">
+    </button>
+    <button type="button" class="nav-item" data-tab="threat" onclick="showMiroTab(\'threat\')" role="tab" aria-selected="false">
       <span>🔍 威脅與暗網鑑識</span>
       <span class="nav-tag">SEV-1</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('plan180')">
+    </button>
+    <button type="button" class="nav-item" data-tab="plan180" onclick="showMiroTab(\'plan180\')" role="tab" aria-selected="false">
       <span>🛡️ 180天戰略計劃書</span>
       <span class="nav-tag">CSF 2.0</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('governance')">
+    </button>
+    <button type="button" class="nav-item" data-tab="governance" onclick="showMiroTab(\'governance\')" role="tab" aria-selected="false">
       <span>🏛️ 組織架構與治理原則</span>
       <span class="nav-tag">MODEL</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('gartner_cio')">
+    </button>
+    <button type="button" class="nav-item" data-tab="gartner_cio" onclick="showMiroTab(\'gartner_cio\')" role="tab" aria-selected="false">
       <span>📈 Gartner 現代 CIO 轉型</span>
       <span class="nav-tag">PARADIGM</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('ueba')">
+    </button>
+    <button type="button" class="nav-item" data-tab="ueba" onclick="showMiroTab(\'ueba\')" role="tab" aria-selected="false">
       <span>🤖 UEBA 行為監測平台</span>
       <span class="nav-tag">AI ITDR</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('audit')">
+    </button>
+    <button type="button" class="nav-item" data-tab="audit" onclick="showMiroTab(\'audit\')" role="tab" aria-selected="false">
       <span>📋 全域資產盤點 SOP</span>
       <span class="nav-tag">GxP</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('dfir')">
+    </button>
+    <button type="button" class="nav-item" data-tab="dfir" onclick="showMiroTab(\'dfir\')" role="tab" aria-selected="false">
       <span>⚡ DFIR 團隊進駐 WBS</span>
       <span class="nav-tag">14天</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('routine')">
+    </button>
+    <button type="button" class="nav-item" data-tab="routine" onclick="showMiroTab(\'routine\')" role="tab" aria-selected="false">
       <span>📅 日/週/月/季預防體系</span>
       <span class="nav-tag">IMMUNE</span>
-    </li>
-    <li class="nav-item" onclick="showMiroTab('downloads')">
+    </button>
+    <button type="button" class="nav-item" data-tab="downloads" onclick="showMiroTab(\'downloads\')" role="tab" aria-selected="false">
       <span>📁 正式報告下載中心</span>
       <span class="nav-tag">11 份全</span>
-    </li>
+    </button>
   </ul>
 
   <div class="sidebar-footer">
@@ -1154,23 +1205,23 @@
       </p>
 
       <div class="miro-grid-4">
-        <div class="miro-card">
-          <div class="miro-card-kicker">CROWN JEWELS</div>
+        <div class="miro-card interactive-card" onclick="showMiroTab('governance')" role="button" tabindex="0" title="點擊查看詳細模組">
+          <div class="miro-card-kicker">CROWN JEWELS <span style="font-size:10px; float:right;">➔</span></div>
           <div class="miro-card-metric">0 外洩</div>
           <div class="miro-card-desc">Besremi 專利 CMC 加密完好</div>
         </div>
-        <div class="miro-card">
-          <div class="miro-card-kicker">PRODUCTION OT</div>
+        <div class="miro-card interactive-card" onclick="showMiroTab('audit')" role="button" tabindex="0" title="點擊查看詳細模組">
+          <div class="miro-card-kicker">PRODUCTION OT <span style="font-size:10px; float:right;">➔</span></div>
           <div class="miro-card-metric">100% 正常</div>
           <div class="miro-card-desc">台中 GMP 廠 Purdue 隔離</div>
         </div>
-        <div class="miro-card">
-          <div class="miro-card-kicker">EDR COVERAGE</div>
+        <div class="miro-card interactive-card" onclick="showMiroTab('threat')" role="button" tabindex="0" title="點擊查看詳細模組">
+          <div class="miro-card-kicker">EDR COVERAGE <span style="font-size:10px; float:right;">➔</span></div>
           <div class="miro-card-metric">99.6%</div>
           <div class="miro-card-desc">泛泰等 18 台盲點已補齊</div>
         </div>
-        <div class="miro-card">
-          <div class="miro-card-kicker">IMMUTABLE BACKUP</div>
+        <div class="miro-card interactive-card" onclick="showMiroTab('dfir')" role="button" tabindex="0" title="點擊查看詳細模組">
+          <div class="miro-card-kicker">IMMUTABLE BACKUP <span style="font-size:10px; float:right;">➔</span></div>
           <div class="miro-card-metric">WORM 鎖定</div>
           <div class="miro-card-desc">S3 Object Lock 乾淨可復原</div>
         </div>
@@ -1202,16 +1253,16 @@
       </div>
 
       <div class="miro-grid-2">
-        <div class="miro-card">
-          <div class="miro-card-kicker">DUAL-TRACK MODEL</div>
+        <div class="miro-card interactive-card" onclick="showMiroTab('dfir')" role="button" tabindex="0" title="點擊查看 DFIR 專案">
+          <div class="miro-card-kicker">DUAL-TRACK MODEL <span style="font-size:10px; float:right;">➔</span></div>
           <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:8px;">雙軌平行推進機制</h3>
           <p style="font-size:13px; color:var(--text-charcoal);">
             • <strong>軌道一 (技術應變)</strong>：第三方 DFIR 專案滅火，享有律師保密特權（Attorney-Client Privilege）與司法證據鏈。<br>
             • <strong>軌道二 (長遠治理)</strong>：以正式經理人與 CISO 候選人身分統籌，參與董事會與審計委員會正式遴選。
           </p>
         </div>
-        <div class="miro-card">
-          <div class="miro-card-kicker">BOARD KRI DASHBOARD</div>
+        <div class="miro-card interactive-card" onclick="showMiroTab('governance')" role="button" tabindex="0" title="點擊查看董事會 KRI">
+          <div class="miro-card-kicker">BOARD KRI DASHBOARD <span style="font-size:10px; float:right;">➔</span></div>
           <h3 style="color:var(--accent-orange); font-size:15px; margin-bottom:8px;">一頁式董事會治理報告</h3>
           <p style="font-size:13px; color:var(--text-charcoal);">
             將技術指標轉化為商業風險語言，嚴格監控 P90 偵測時間、不可變備份演練成功率、特權帳號 MFA 覆蓋率與供應鏈合約合規率。
@@ -2083,7 +2134,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>1. 藥華醫藥集團 全球資安治理與戰時應變策略報告 (米蘭社論版)</h4>
           <p>PharmaEssentia_Milan_Editorial_Strategic_Report.docx ｜ 董事會核定本、180天戰略</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_Milan_Editorial_Strategic_Report.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_Milan_Editorial_Strategic_Report.docx" download="PharmaEssentia_Milan_Editorial_Strategic_Report.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2091,7 +2142,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>2. 藥華醫藥資安應變小組（CSIRT）編組名冊與全域資產盤點 SOP</h4>
           <p>PharmaEssentia_CSIRT_Roster_and_Audit_Procedures.docx ｜ 組織名冊、RACI 權責矩陣</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_CSIRT_Roster_and_Audit_Procedures.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_CSIRT_Roster_and_Audit_Procedures.docx" download="PharmaEssentia_CSIRT_Roster_and_Audit_Procedures.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2099,7 +2150,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>3. 重大資安事件各單位執行程序書 (SOP) 暨 WBS 分工規劃書</h4>
           <p>PharmaEssentia_Unit_SOP_and_WBS.docx ｜ 7 大職能 SOP、14 個工作包</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_Unit_SOP_and_WBS.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_Unit_SOP_and_WBS.docx" download="PharmaEssentia_Unit_SOP_and_WBS.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2107,7 +2158,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>4. 數位鑑識與事件應變（DFIR）標準程序 暨 WBS 專案報告書 (米羅版)</h4>
           <p>PharmaEssentia_DFIR_Miro_Report.docx ｜ 6 大鑑識程序、司法證據鏈保全</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_DFIR_Miro_Report.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_DFIR_Miro_Report.docx" download="PharmaEssentia_DFIR_Miro_Report.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2115,7 +2166,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>5. 內部資安威脅獵捕、資產盲點與全域稽核盤點報告書 (米羅版)</h4>
           <p>PharmaEssentia_Internal_Audit_Miro_Report.docx ｜ 六大維度清查結果、威脅清零</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_Internal_Audit_Miro_Report.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_Internal_Audit_Miro_Report.docx" download="PharmaEssentia_Internal_Audit_Miro_Report.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2123,7 +2174,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>6. 使用者與實體行為分析 (UEBA / ITDR) 監測平台規劃報告書</h4>
           <p>PharmaEssentia_UEBA_Behavioral_Monitoring_Framework.docx ｜ AI 身分動態監控、專利防竊</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_UEBA_Behavioral_Monitoring_Framework.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_UEBA_Behavioral_Monitoring_Framework.docx" download="PharmaEssentia_UEBA_Behavioral_Monitoring_Framework.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2131,7 +2182,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>7. 日常（日/週/月/季/年）主動預防資安監控與治理報告體系</h4>
           <p>PharmaEssentia_Routine_Reporting_Framework.docx ｜ 5 層長態免疫監控 Cadence</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_Routine_Reporting_Framework.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_Routine_Reporting_Framework.docx" download="PharmaEssentia_Routine_Reporting_Framework.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2139,7 +2190,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>8. 藥華醫藥集團 CIO / CTO / CISO 組織架構圖 暨 職掌分工權責章程</h4>
           <p>PharmaEssentia_CIO_CTO_CISO_Governance_Charter.docx ｜ Gartner 高階技術鐵三角</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_CIO_CTO_CISO_Governance_Charter.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_CIO_CTO_CISO_Governance_Charter.docx" download="PharmaEssentia_CIO_CTO_CISO_Governance_Charter.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2147,7 +2198,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>9. 從機房維運者邁向商業共創者：現代頂級 CIO 跨域知識體系與轉型白皮書</h4>
           <p>PharmaEssentia_Gartner_Modern_CIO_Transformation_Whitepaper.docx ｜ Gartner 權威研究</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_Gartner_Modern_CIO_Transformation_Whitepaper.docx">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_Gartner_Modern_CIO_Transformation_Whitepaper.docx" download="PharmaEssentia_Gartner_Modern_CIO_Transformation_Whitepaper.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
 
       <div class="download-card">
@@ -2155,7 +2206,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4>10. 藥華醫藥集團 全球資安治理與 C-Suite 鐵三角戰略簡報 (16:9 PPTX 簡報檔)</h4>
           <p>PharmaEssentia_Executive_Presentation_Deck.pptx ｜ 10 頁完整米羅藝術風高階董事會簡報</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_Executive_Presentation_Deck.pptx">📥 下載 PPTX 簡報</a>
+        <a class="dl-action-btn" href="PharmaEssentia_Executive_Presentation_Deck.pptx" download="PharmaEssentia_Executive_Presentation_Deck.pptx" target="_blank" rel="noopener noreferrer">📥 下載 PPTX 簡報</a>
       </div>
 
       <div class="download-card" style="border-color:var(--accent-orange); background:#FFFDF9;">
@@ -2163,7 +2214,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
           <h4 style="color:var(--accent-orange);">11. 藥華醫藥集團 全球資安韌性治理與戰時應變 12 個月落地 WBS 報告書 (Master WBS)</h4>
           <p>PharmaEssentia_Cyber_Resilience_Detailed_WBS.docx ｜ 四階段 24 個工作包、RACI、SLA 與驗收標準</p>
         </div>
-        <a class="dl-action-btn" href="PharmaEssentia_Cyber_Resilience_Detailed_WBS.docx" style="background:var(--accent-orange);">📥 下載 Word 檔</a>
+        <a class="dl-action-btn" href="PharmaEssentia_Cyber_Resilience_Detailed_WBS.docx" style="background:var(--accent-orange);" download="PharmaEssentia_Cyber_Resilience_Detailed_WBS.docx" target="_blank" rel="noopener noreferrer">📥 下載 Word 檔</a>
       </div>
     </div>
 
@@ -2214,13 +2265,22 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
     }
   }
 
+  // Global robust tab navigation
   function showMiroTab(tabId) {
-    // 1. Update Sidebar Nav Items
-    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-    const sidebarMatch = document.querySelector(`.nav-item[onclick*="'${tabId}'"]`);
-    if (sidebarMatch) sidebarMatch.classList.add('active');
+    if (!tabId) return;
 
-    // 2. Update Mobile Pills
+    // 1. Update Sidebar Nav Items (both button and li compatible)
+    document.querySelectorAll('.nav-item').forEach(el => {
+      el.classList.remove('active');
+      el.setAttribute('aria-selected', 'false');
+    });
+    const sidebarMatches = document.querySelectorAll(`[data-tab="${tabId}"], .nav-item[onclick*="'${tabId}'"]`);
+    sidebarMatches.forEach(el => {
+      el.classList.add('active');
+      el.setAttribute('aria-selected', 'true');
+    });
+
+    // 2. Update Mobile Pills & Scroll into view
     document.querySelectorAll('.pill-nav-item').forEach(el => {
       if (el.getAttribute('data-tab') === tabId) {
         el.classList.add('active');
@@ -2230,7 +2290,7 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
       }
     });
 
-    // 2b. Update Mobile Bottom Bar Items
+    // 3. Update Mobile Bottom Bar Items
     document.querySelectorAll('.bottom-nav-item').forEach(el => {
       if (el.getAttribute('data-tab') === tabId) {
         el.classList.add('active');
@@ -2239,23 +2299,28 @@ CIO／資訊團隊、QA、RA、研發、臨床、製造、供應鏈、
       }
     });
 
-    // 3. Switch Tab Content
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    // 4. Switch Tab Content cleanly
+    document.querySelectorAll('.tab-content').forEach(el => {
+      el.classList.remove('active');
+      el.style.display = 'none';
+    });
     const target = document.getElementById('miro-' + tabId);
     if (target) {
+      target.style.display = 'block';
       target.classList.add('active');
-      // Scroll to top of workspace smoothly
+      
+      // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
       const scrollContainer = document.querySelector('.scroll-container');
       if (scrollContainer) scrollContainer.scrollTop = 0;
     }
 
-    // 4. Update Header Title
+    // 5. Update Header Title
     const activeTitle = miroTitles[tabId] || '戰情專區';
     const activeTabElem = document.getElementById('active-tab-name');
     if (activeTabElem) activeTabElem.textContent = activeTitle;
 
-    // 5. Close Mobile Menu Drawer if open
+    // 6. Close Drawer cleanly
     toggleMobileMenu(false);
   }
 
